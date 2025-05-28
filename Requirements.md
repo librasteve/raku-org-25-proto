@@ -10,7 +10,7 @@
 ## messages
  - a set of power tools for coders
  - use the tool & style that matches your problem
- - all designed from first principles to work smoothly together
+ - all designed to work smoothly together
  
 ### plus
  - extensive & growing ecosystem (with Inline::Perl5 & Inline::Python)
