@@ -4,7 +4,7 @@
  - name = raku  (.lc)
  - logo = camelia
  - colors = camelia (good - used sparingly - on lightdark)
- - brand = open [code|community]
+ - brand = open & fun [code|community]
  - claim = power tools for coders
 
 ## messages
