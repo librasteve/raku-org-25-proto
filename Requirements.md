@@ -55,6 +55,3 @@ DSL, LLM, functional, OO, CLI, procedural, dynamic, strict, concurrent, jupyter
 ### quotes
  - https://rakujourney.wordpress.com/2024/05/22/perl-love-notes/
  - https://buttondown.com/hillelwayne/archive/raku-a-language-for-gremlins/
-
-
-# site build

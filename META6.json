@@ -1,25 +1,15 @@
 {
-  "auth": "zef:librasteve",
-  "authors": [
-    "librasteve"
-  ],
-  "build-depends": [
-  ],
-  "depends": [
-  ],
-  "description": "blah blah blah",
-  "license": "Artistic-2.0",
-  "name": "Org",
-  "perl": "6.d",
-  "provides": {
-    "Org": "lib/Org.rakumod"
-  },
-  "resources": [
-  ],
-  "source-url": "",
-  "tags": [
-  ],
-  "test-depends": [
-  ],
-  "version": "0.0.1"
+    "name": "Org",
+    "description": "blah blah blah",
+    "version": "0.0.1",
+    "authors": [
+        "librasteve"
+    ],
+    "auth": "zef:librasteve",
+    "build-depends": [],
+    "provides": {
+        "Org": "lib/Org.rakumod"
+    },
+    "license": "Artistic-2.0",
+    "source-url": ""
 }
