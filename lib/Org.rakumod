@@ -19,37 +19,39 @@ sub install  {
     ];
 }
 
-class BasePage is Page {
-    has Str $.title       = 'raku®';
-    has Str $.description = 'The raku® programming language.';
 
-    has Footer $.footer = footer(
-        hr;
-        p safe Q|
-            Hypered with <a href="https://htmx.org" target="_blank">htmx</a>.
-            Aloft on <a href="https://harcstack.org" target="_blank"><b>&Aring;ir</b></a>.
-            Constructed in <a href="https://cro.raku.org" target="_blank">cro</a>.
-            &nbsp;&amp;&nbsp;
-            Styled by <a href="https://picocss.com" target="_blank">picocss</a>.
-        |;
-        p safe 'The Raku® Programming Language';
-    ),
-}
-sub basepage(*@a, *%h) { BasePage.new( |@a, |%h ) };
+my &basepage = &page.assuming(
+    title       => 'raku®',
+    description => 'The raku® programming language.',
+    footer      =>  footer [
+                        hr;
+                        p safe Q|
+                            Hypered with <a href="https://htmx.org" target="_blank">htmx</a>.
+                            Aloft on <a href="https://harcstack.org" target="_blank"><b>&Aring;ir</b></a>.
+                            Constructed in <a href="https://cro.raku.org" target="_blank">cro</a>.
+                            &nbsp;&amp;&nbsp;
+                            Styled by <a href="https://picocss.com" target="_blank">picocss</a>.
+                        |;
+                        p safe 'The Raku® Programming Language';
+                    ],
+);
 
-my Page $install = basepage main 'yo';
+my &shadow = &background.assuming
+                :url<https://upload.wikimedia.org/wikipedia/commons/f/fd/Butterfly_bottom_PSF_transparent.gif>;
+
+my Page $install = basepage main [shadow; 'yo'];
 my Page $home = home-page();
 
 my Nav $nav =
     nav
-        :logo( span a :style("display: flex; align-items: center; gap: 0.5rem; text-decoration: none;"),
-        [ img :src</img/camelia-logo.png>, :width<60px>; p :style("margin:0"), "raku®" ]),
+        logo => (
+            span a :href</>, :target<_self>, :style("display: flex; align-items: center; gap: 0.5rem; text-decoration: none;"),
+            [ img :src</img/camelia-logo.png>, :width<60px>; p :style("margin:0"), "raku®" ]
+        ),
         :widgets[lightdark],
         [
-            home      => $home,
             github    => (external :href<https://github.com/Raku>),
             docs      => (external :href<https://docs.raku.org>),
-            community => (external :href<https://discord.gg/VzYpdQ6>),
             ecosystem => (external :href<https://raku.land>),
             guide     => (external :href<https://raku.guide>),
             weekly    => (external :href<https://rakudoweekly.blog>),
@@ -61,7 +63,7 @@ my Page @pages = [$home, $install];
 { .nav = $nav } for @pages;
 
 sub SITE is export {
-    site :@tools, :register[Hilite.new, Tabs.new], :theme-color<pink>, :bold-color<lime>, :@pages
+    site :@tools, :register[Hilite.new, Tabs.new, Background.new], :theme-color<pink>, :bold-color<lime>, :@pages
 }
 
 #var pico background colour (ie dark mode)
@@ -69,23 +71,7 @@ sub SITE is export {
 sub home-page {
     basepage
         main [
-            div
-                :style(Q|
-                    position: fixed;
-                    top: 140px; left: 0;
-                    width: 100vw;
-                    height: 300px;
-                    background:
-                      linear-gradient(rgba(19, 22.5, 30.5, 0.96), rgba(19, 22.5, 30.5, 0.90)),
-                      url('https://upload.wikimedia.org/wikipedia/commons/f/fd/Butterfly_bottom_PSF_transparent.gif');
-                    background-repeat: no-repeat;
-                    background-position: center center;
-                    z-index: -1;
-                    pointer-events: none;
-                    padding: 20px;
-                 |),
-            [];
-
+            shadow;
             div :align<center>, :style('position: relative; z-index: 0; padding: 20px;'), [
                 h1 'raku is the powerful, expressive, multi-paradigm programming language.';
                 h4 em '"power tools for coders"';
@@ -96,9 +82,9 @@ sub home-page {
                 ];
 
                 div [
-                    a :href<https://discord.gg/VzYpdQ6>, :target<_blank>, button :class<outline>, 'Friendly';
-                    a :href<https://github.com/Raku>,    :target<_blank>, button :class<outline>, 'Open Source';
-                    a :href<https://>,                   :target<_blank>, button :class<outline>, '-Ofun';
+                    a :href</>, :target<_blank>, button :class<outline>, 'Friendly Community';
+                    a :href</>, :target<_blank>, button :class<outline>, 'Open Source';
+                    a :href</>, :target<_blank>, button :class<outline>, '-Ofun';
                 ];
             ];
 
