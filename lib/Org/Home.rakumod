@@ -11,7 +11,7 @@ sub vignette(*@a, *%h) {
 }
 sub install  {
     div [
-        a :href</nav/1/install>, button "Install";
+        a :href</nav/1/install>, :target<_self>, button "Install";
         p :style('font-size: 0.8em;'), "linux, macOS, and Windows";
     ];
 }

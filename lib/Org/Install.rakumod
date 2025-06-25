@@ -4,7 +4,7 @@ use Air::Functional :BASE;
 use Air::Base;
 
 sub install-page(&basepage, &shadow) is export {
-    basepage :REFRESH(10),
+    basepage #:REFRESH(10),
         main [
             shadow;
             div :align<center>, :style('position: relative; z-index: 0; padding: 20px;'), [
@@ -19,31 +19,43 @@ sub install-page(&basepage, &shadow) is export {
         ];
     }
 
-sub linux-ish {
+sub md-head {
 div [
 
 markdown q:to/END/;
 
 rakubrew is a [Raku](https://raku.org) installation tool. It allows you to have multiple versions of different Raku implementations installed in parallel and switch between them. It's a [perlbrew](https://perlbrew.pl/) and [plenv](https://github.com/tokuhirom/plenv) look alike and supports both flavours of commands.
 
+other download and installation [options](#footer) are available
 
-# Features
+
+## features
 
     - Works about anywhere ... Windows, MacOS, Linux, BSD
     - Shell agnostic ... Powershell, CMD, Bash, Zsh, Fish ...
     - No dependencies except Perl on Unixy machines
     - Can get Raku installed and running in seconds
     - Autocomplete
+END
 
+    ]
+}
 
-# Installation
+sub linux-ish {
+div [
+
+h1 'linux-ish';
+md-head;
+
+markdown q:to/END/;
+## installation
 
 Just copy and paste the following piece of code into a console.
 
     curl https://rakubrew.org/install-on-perl.sh | sh
 
 
-# Bare bones installation
+## bare bones installation
 
 If the above installation script somehow doesn't work for you, you can install
 rakubrew manually.
@@ -73,34 +85,25 @@ Finally run
 That's all!
 END
 
-tail;
+md-tail;
 ]
 }
 
 sub macOS {
 div [
+
+h1 'macOS';
+md-head;
+
 markdown q:to/END/;
-
-rakubrew is a [Raku](https://raku.org) installation tool. It allows you to have multiple versions of different Raku implementations installed in parallel and switch between them. It's a [perlbrew](https://perlbrew.pl/) and [plenv](https://github.com/tokuhirom/plenv) look alike and supports both flavours of commands.
-
-
-# Features
-
-    - Works about anywhere ... Windows, MacOS, Linux, BSD
-    - Shell agnostic ... Powershell, CMD, Bash, Zsh, Fish ...
-    - No dependencies except Perl on Unixy machines
-    - Can get Raku installed and running in seconds
-    - Autocomplete
-
-
-# Installation
+## installation
 
 Just copy and paste the following piece of code into a console.
 
     curl https://rakubrew.org/install-on-macos.sh | sh
 
 
-# Bare bones installation
+## bare bones installation
 
 If the above installation script somehow doesn't work for you, you can install
 rakubrew manually.
@@ -133,27 +136,18 @@ Finally run
 That's all!
 END
 
-tail;
+md-tail;
 ]
 }
 
 sub Windows {
 div [
+
+h1 'Windows';
+md-head;
+
 markdown q:to/END/;
-
-rakubrew is a [Raku](https://raku.org) installation tool. It allows you to have multiple versions of different Raku implementations installed in parallel and switch between them. It's a [perlbrew](https://perlbrew.pl/) and [plenv](https://github.com/tokuhirom/plenv) look alike and supports both flavours of commands.
-
-
-# Features
-
-    - Works about anywhere ... Windows, MacOS, Linux, BSD
-    - Shell agnostic ... Powershell, CMD, Bash, Zsh, Fish ...
-    - No dependencies except Perl on Unixy machines
-    - Can get Raku installed and running in seconds
-    - Autocomplete
-
-
-# Installation
+## installation
 
 On `CMD` you need to download https://rakubrew.org/install-on-cmd.bat and then
 execute that script in a CMD terminal.
@@ -163,7 +157,7 @@ Powershell window (Don't forget the "." at the start of the command!):
 
     . {iwr -useb https://rakubrew.org/install-on-powershell.ps1 } | iex
 
-# Bare bones installation
+## bare bones installation
 
 First download the rakubrew executable:
 
@@ -186,29 +180,29 @@ Finally run
 That's all!
 END
 
-tail;
+md-tail;
 ]
 }
 
-sub tail {
+sub md-tail {
 
 markdown q:to/END/;
 
-## Shell hook
+### shell hook
 
 If you want to use `env` mode, the `shell` command or have auto-completion, you need to install the shell hook. To get the instructions on how to do that type
 
     rakubrew init
 
 
-## Installation path
+### installation path
 
 To make rakubrew use a different directory to store its files set the `RAKUBREW_HOME` environment variable prior to calling it. Put the following into your `.bashrc` or similar:
 
     export RAKUBREW_HOME=~/rakubrew # or some other path
 
 
-# How
+## how
 
     # list available versions
     rakubrew available
@@ -222,7 +216,7 @@ To make rakubrew use a different directory to store its files set the `RAKUBREW_
     raku -e 'say "Now running {$*RAKU.compiler.version}!"'
 
 
-# global, shell, local
+## global, shell, local
 
 rakubrew knows three different versions that can be set separately.
 
@@ -233,7 +227,7 @@ The `shell` version changes the active Raku version just in the current shell. C
 The `local` version is specific to a folder. When CWD is in that folder or a sub folder that version of Raku is used. Only works in `shim` mode. To unset a local version one must delete the `.RAKU_VERSION` file in the respective folder.
 
 
-# Modes
+## modes
 
 rakubrew can work in two distinct modes: `env` and `shim`
 
@@ -246,7 +240,7 @@ In `shim` mode rakubrew generates wrapper scripts called shims for all executabl
 In `env` mode this is not necessary.
 
 
-# Registering external versions
+## registering external versions
 
 To add a Raku installation to rakubrew that was created outside of rakubrew one
 should do:
@@ -254,12 +248,12 @@ should do:
     rakubrew register name-of-version /path/to/raku/install/directory
 
 
-# Upgrading
+## upgrading
 
     rakubrew self-upgrade
 
 
-# Uninstall
+## uninstall
 
 To remove rakubrew and any Raku implementations it has installed on your
 system, delete the  `~/.rakubrew` and `~/.local/share/rakubrew` directories.
