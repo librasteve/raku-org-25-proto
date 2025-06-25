@@ -30,7 +30,7 @@ sub home-page(&basepage, &shadow) is export {
                 ];
 
                 div [
-                    a :href</>, :target<_blank>, button :class<outline>, 'Friendly Community';
+                    a :href</>, :target<_blank>, button :class<outline>, 'Friendly';
                     a :href</>, :target<_blank>, button :class<outline>, 'Open Source';
                     a :href</>, :target<_blank>, button :class<outline>, '-Ofun';
                 ];
