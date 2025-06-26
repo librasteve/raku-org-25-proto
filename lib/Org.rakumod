@@ -19,6 +19,7 @@ my &basepage = &page.assuming(
                             Hypered with <a href="https://htmx.org" target="_blank">htmx</a>.
                             Aloft on <a href="https://harcstack.org" target="_blank"><b>&Aring;ir</b></a>.
                             Constructed in <a href="https://cro.raku.org" target="_blank">cro</a>.
+                            Written in <a href="https://raku.org" target="_blank">raku</a>.
                             &nbsp;&amp;&nbsp;
                             Styled by <a href="https://picocss.com" target="_blank">picocss</a>.
                         |;
@@ -46,6 +47,7 @@ my Nav $nav =
             ecosystem => (external :href<https://raku.land>),
             guide     => (external :href<https://raku.guide>),
             weekly    => (external :href<https://rakudoweekly.blog>),
+            chat      => (external :href<https://discord.gg/VzYpdQ6>),
             install   => $install,
         ];
 
@@ -56,9 +58,9 @@ my Page @pages = [$home, $install];
 sub SITE is export {
     site
         :@tools,
-        :register[Hilite.new, Tabs.new, Background.new],
+        :register[Hilite.new, Tabs.new, Background.new, Lightbox.new],
         :theme-color<pink>,
-        :bold-color<lime>,
+        :bold-color<springgreen>,
         :@pages,
 }
 

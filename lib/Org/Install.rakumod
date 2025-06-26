@@ -7,7 +7,7 @@ sub install-page(&basepage, &shadow) is export {
     basepage #:REFRESH(10),
         main [
             shadow;
-            div :align<center>, :style('position: relative; z-index: 0; padding: 20px;'), [
+            div :align<center>, :style('position: relative; padding: 20px;'), [
                 h1 'rakubrew';
                 tabs :align-nav<center>, [
                     linux-ish => tab linux-ish();
@@ -27,18 +27,11 @@ markdown q:to/END/;
 rakubrew is a [Raku](https://raku.org) installation tool. It allows you to have multiple versions of different Raku implementations installed in parallel and switch between them. It's a [perlbrew](https://perlbrew.pl/) and [plenv](https://github.com/tokuhirom/plenv) look alike and supports both flavours of commands.
 
 other download and installation [options](#footer) are available
-
-
-## features
-
-    - Works about anywhere ... Windows, MacOS, Linux, BSD
-    - Shell agnostic ... Powershell, CMD, Bash, Zsh, Fish ...
-    - No dependencies except Perl on Unixy machines
-    - Can get Raku installed and running in seconds
-    - Autocomplete
 END
 
-    ]
+hr;
+spacer;
+]
 }
 
 sub linux-ish {
