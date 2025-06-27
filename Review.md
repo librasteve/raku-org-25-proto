@@ -2,6 +2,10 @@
 
 Thanks for agreeing to review the first attempt of a prototype. Please bear in mind the following. 
 
+Spike01 is live here https://proto25.harcstack.org
+
+You can also see the README to install and run locally if you prefer.
+
 ## Review Process
 
 Coming off the kitchen docs / website conversation, we agreed to limit the initial review to the summit participants plus Damian. 
