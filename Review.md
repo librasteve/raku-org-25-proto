@@ -44,6 +44,14 @@ For the community, the benefits from this effort are:
 
 (remember 51% of site views are smartphone)
 
+## Deployment
+
+I am planning to build a deployment facility for HARC stack based on the requirements we agree for raku.org which hopeully will ape / improve on existing deployment methods (rakudoc?).
+
+My slight preference is to leverage the work I did on https://github.com/librasteve/raku-CLI-Wordpress with docker / docker-compose ... but happy to adapt to the raku deployment team needs.
+
+Please add any thoughts to deployment Issue(s).
+
 ## Requirements 
 
 Check out the Requirements.md file here to see the intent and focus as already reviewed by the wider raku community.
