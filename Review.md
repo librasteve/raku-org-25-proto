@@ -1,10 +1,14 @@
 # Review Spike01
 
-Thanks for agreeing to review the first attempt of a prototype. Please bear in mind the following. 
+Thanks for agreeing to review the first attempt of a prototype.
 
 Spike01 is live here https://proto25.harcstack.org
 
 You can also see the README to install and run locally if you prefer.
+
+Please note that the review period is from 27-Jun to 02-Jul.
+
+Hopefully the following will help with osme context and guidance...
 
 ## Review Process
 
