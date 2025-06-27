@@ -1,6 +1,6 @@
 # Review Spike01
 
-Thanks for agreeing to review the first attempt of a prototype.
+Thanks for agreeing to review the first iteration of a prototype upgrade to the raku.org website.
 
 Spike01 is live here https://proto25.harcstack.org
 
