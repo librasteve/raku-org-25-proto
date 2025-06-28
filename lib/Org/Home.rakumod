@@ -28,36 +28,6 @@ sub home-page(&basepage, &shadow) is export {
                 div [
                     h5 'raku packs a massive collection of programming tools into a single language. with all that choice at your fingertips, you can pick the best tool for the task.';
                 ];
-
-                flexbox [
-                    lightbox [
-                        button( :class<outline>, 'Friendly');
-                        safe q:to/END/;
-                        <div style="font-size: xx-large";>
-                        <img src="/img/camelia-logo.png" alt="»ö«" class="img-responsive">
-                        <br/><br/>
-                        <P>Hi, my name is Camelia. I'm the spokesbug for the raku programming language. Raku has been developed by a team of dedicated and enthusiastic open source volunteers, and continues to be developed. You can help too. The only requirement is that you know how to be nice to all kinds of people (and butterflies). Come over to our group chat on <a href="https://discord.gg/VzYpdQ6">Discord</a> or <a href="https://web.libera.chat/#raku">#raku (irc.libera.chat)</a> and someone will be glad to help you get started.
-                        </p>
-                        </div>
-                        END
-                    ];
-                    lightbox [
-                        button( :class<outline>, 'Open Source');
-                        safe q:to/END/;
-                        <div style="font-size: xx-large";>
-                        <p>Open source software offers several key strengths. It encourages collaboration and innovation by allowing a global community of developers to contribute and improve the code. The transparency of open source enhances security and builds trust, as anyone can inspect and audit the software. Additionally, it provides flexibility, enabling users to modify and adapt the software to meet their specific needs. Its cost-effectiveness and rapid development cycle make it an attractive choice for individuals and organizations alike.</p>
-                        </div>
-                        END
-                    ];
-                    lightbox [
-                        button( :class<outline>, '-Ofun');
-                        safe q:to/END/;
-                        <div style="font-size: xx-large";>
-                        <p>raku® is optimized for fun! Audrey Tang coined the phrase that raku is optimized for fun, short <b>-Ofun</b>. Raku has a fun-driven community: writing a raku compiler is fun, developing applications too, and most of all dealing with friendly, intelligent people.</p>
-                        </div>
-                        END
-                    ];
-                ];
             ];
 
             div :align<center>, [
