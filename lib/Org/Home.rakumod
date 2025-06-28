@@ -22,17 +22,12 @@ sub home-page(&basepage, &shadow) is export {
             shadow;
             div :align<center>, :style('position: relative; padding: 20px;'), [
                 h1 'raku is the powerful, expressive, multi-paradigm programming language.';
-                h4 em '"power tools for coders"';
                 install;
 
                 div [
                     h5 'raku packs a massive collection of programming tools into a single language. with all that choice at your fingertips, you can pick the best tool for the task.';
+                    h5 'Object-Oriented, Functional and Procedural styles combine smoothly. Strict and Gradual typing is built in …';
                 ];
-            ];
-
-            div :align<center>, [
-                spacer;
-                h5 'Object-Oriented, Functional and Procedural styles combine smoothly. Strict and Gradual typing is built in …';
             ];
 
             div [
@@ -189,11 +184,6 @@ sub home-page(&basepage, &shadow) is export {
                                     END
                                 ];
                         ];
-                ];
-
-                div :align<center>, [
-                    spacer;
-                    h5 '… featuring: Grammars, Concurrency, Lazy Evaluation, Role Composition, Mixins, Multi-Dispatch, Signatures, IO …';
                 ];
 
                 tabs [
@@ -362,11 +352,6 @@ sub home-page(&basepage, &shadow) is export {
 
                 ];
 
-                div :align<center>, [
-                    spacer;
-                    h5 "… uniquely powerful: Unicode Regexs, Hyper Operators, Feed Operators, Rationals, Sets & Junctions, Smartmatching …";
-                ];
-
                 tabs [
                     unicode-regexs => tab
                         vignette :direction<rtl>, [
@@ -491,11 +476,6 @@ sub home-page(&basepage, &shadow) is export {
                             ];
                         ];
                 ];
-            ];
-
-            div :align<center>, [
-                spacer;
-                h5 '… and a growing ecosystem: Localization, AI, Web, Database …';
             ];
 
             tabs [
@@ -623,11 +603,6 @@ sub home-page(&basepage, &shadow) is export {
 
 
 
-            ];
-
-            div :align<center>, [
-                install;
-                h5 '… check the docs for more on: Phasers, Delegation, Custom Operators, Meta Object Protocol, Traits …';
             ];
         ];
 }
