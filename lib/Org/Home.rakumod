@@ -17,16 +17,19 @@ sub install  {
 }
 
 sub home-page(&basepage, &shadow) is export {
-    basepage
+    basepage :REFRESH(10),
         main [
             shadow;
-            div :align<center>, :style('position: relative; padding: 20px;'), [
-                h1 'raku is the powerful, expressive, multi-paradigm programming language.';
+            div :align<center>, [
+                h1 safe 'raku is a powerful, expressive, multi-paradigm programming&nbsp;language';
+                spacer :min-height<4em>;
                 install;
-
-                div [
-                    h5 'raku packs a massive collection of programming tools into a single language. with all that choice at your fingertips, you can pick the best tool for the task.';
-                    h5 'Object-Oriented, Functional and Procedural styles combine smoothly. Strict and Gradual typing is built in …';
+                spacer :min-height<4em>;
+                div :min-width<400px>, [
+                    h5 'raku packs a massive collection of programming tools into a single language';
+                    h5 'with all this at your fingertips, you can pick the best tool for any task';
+                    h5 'OO, functional and procedural styles combine smoothly';
+                    h5 'strict and gradual typing is built in';
                 ];
             ];
 
