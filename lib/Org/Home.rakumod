@@ -17,15 +17,15 @@ sub install  {
 }
 
 sub home-page(&basepage, &shadow) is export {
-    basepage :REFRESH(10),
+    basepage #:REFRESH(10),
         main [
             shadow;
-            div :align<center>, [
-                h1 safe 'raku is a powerful, expressive, multi-paradigm programming&nbsp;language';
+            div :align<center>, :style<min-width:400px;>, [
+                h1 safe 'raku is a powerful, expressive, multi&#8209;paradigm programming&nbsp;language';
                 spacer :min-height<4em>;
                 install;
                 spacer :min-height<4em>;
-                div :min-width<400px>, [
+                div :style<min-width:400px;>, [
                     h5 'raku packs a massive collection of programming tools into a single language';
                     h5 'with all this at your fingertips, you can pick the best tool for any task';
                     h5 'OO, functional and procedural styles combine smoothly';
