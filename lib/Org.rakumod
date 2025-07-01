@@ -2,6 +2,7 @@ unit class Org;
 
 use Air::Functional :BASE;
 use Air::Base;
+use Air::Plugin::Hilite;
 
 use Org::Home;
 use Org::Install;
@@ -58,7 +59,7 @@ my Page @pages = [$home, $install];
 sub SITE is export {
     site
         :@tools,
-        :register[Hilite.new, Tabs.new, Background.new, Lightbox.new],
+        :register[Air::Plugin::Hilite.new, Tabs.new, Background.new, Lightbox.new],
         :theme-color<pink>,
         :bold-color<springgreen>,
         :@pages,

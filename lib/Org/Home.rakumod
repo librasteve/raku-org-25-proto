@@ -2,6 +2,7 @@ unit class Home;
 
 use Air::Functional :BASE;
 use Air::Base;
+use Air::Plugin::Hilite;
 
 sub note($s) {
     p( :style('font-size: 0.8em; text-align: right'), em("...$s") )
