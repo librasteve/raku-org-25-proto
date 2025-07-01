@@ -23,7 +23,7 @@ my &basepage = &page.assuming(
                             &nbsp;&amp;&nbsp;
                             Styled by <a href="https://picocss.com" target="_blank">picocss</a>.
                         |;
-                        p safe 'The Raku® Programming Language';
+                        p safe 'The raku® Programming Language';
                     ],
 );
 
@@ -31,8 +31,8 @@ my &shadow = &background.assuming
     :url<https://upload.wikimedia.org/wikipedia/commons/f/fd/Butterfly_bottom_PSF_transparent.gif>;
 
 
-my Page $home    = home-page(&basepage, &shadow);
-my Page $install = install-page(&basepage, &shadow);
+my Page $home    = home-page    &basepage, &shadow;
+my Page $install = install-page &basepage, &shadow;
 
 my Nav $nav =
     nav

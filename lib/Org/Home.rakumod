@@ -4,15 +4,15 @@ use Air::Functional :BASE;
 use Air::Base;
 
 sub note($s) {
-    p( :style('font-size: 0.8em; text-align: right'), em("...$s") )
+    p( :style('font-size:small; text-align:right'), em("...$s") )
 }
 sub vignette(*@a, *%h) {
-    grid :grid-template-columns<2.2fr 3.2fr>, :rows(1), :gap(1.5), |%h, @a
+    grid :grid-template-columns<2.2fr 3.2fr>, :gap(1.5), |%h, @a
 }
-sub install  {
+sub install {
     div [
-        a :href</nav/1/install>, :target<_self>, button "Install";
-        p :style('font-size: 0.8em;'), "linux, macOS, and Windows";
+        a :href</nav/1/install>, :target<_self>, button 'Install';
+        p 'linux, macOS, and Windows';
     ];
 }
 
@@ -21,16 +21,17 @@ sub home-page(&basepage, &shadow) is export {
         main [
             shadow;
             div :align<center>, :style<min-width:400px;>, [
-                h1 safe 'raku is a powerful, expressive, multi&#8209;paradigm programming&nbsp;language';
-                spacer :min-height<4em>;
+                h1 safe 'raku is the powerful, expressive, multi&#8209;paradigm programming&nbsp;language';
+                spacer :height<16em>;
                 install;
-                spacer :min-height<4em>;
+                spacer :height<16em>;
                 div :style<min-width:400px;>, [
                     h5 'raku packs a massive collection of programming tools into a single language';
                     h5 'with all this at your fingertips, you can pick the best tool for any task';
                     h5 'OO, functional and procedural styles combine smoothly';
                     h5 'strict and gradual typing is built in';
                 ];
+                spacer :height<16em>;
             ];
 
             div [
@@ -56,7 +57,7 @@ sub home-page(&basepage, &shadow) is export {
                                     }
 
                                     my @radii = 1..4;
-                                    my @circles = @radii.map: -> $radius { Circle.new(:$radius) };
+                                    my @circles = @radii.map: { Circle.new: :radius($_) };
                                     my $total-area = [+] @circles.map: *.area;
 
                                     say "Total area: $total-area";
@@ -147,7 +148,7 @@ sub home-page(&basepage, &shadow) is export {
                         vignette :direction<rtl>, [
                             article [
                                 h3 'Consistent Ecosystem';
-                                p ['Raku ships with the '; code 'zef'; ' package manager.'];
+                                p ['raku ships with the '; code 'zef'; ' package manager.'];
                                 p 'Built in semantic version literals and programmatic comparison help you set wildcard (*) and minimum (+) versions.';
                                 p 'Comprehensive support for modules and meta-data allows selective import on version, author and api.';
                                 note 'robust package management';
@@ -181,9 +182,13 @@ sub home-page(&basepage, &shadow) is export {
                             ];
                             article [
                                 hilite q:to/END/;
-                                    raku -n -e 'say s:g/foo/bar/' file.txt
+                                    raku -ne 'say s:g/foo/bar/' file.txt
+                                    # subst all "foo" with "bar"
 
-                                    # Replace all "foo" with "bar"
+                                    raku -pe 's/ (\d+) / {flip($0)} /' file.txt
+                                    # flip digit runs
+                                    # 123 to 321  (latin)
+                                    # ٣٢٥ to ٥٢٣  (urdu)
                                     END
                                 ];
                         ];
@@ -604,8 +609,12 @@ sub home-page(&basepage, &shadow) is export {
                             ];
                     ];
 
+            ];
 
-
+            div :align<center>, :style<min-width:400px;>, [
+                spacer :min-height<4em>;
+                install;
+                spacer :min-height<4em>;
             ];
         ];
 }

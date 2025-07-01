@@ -10,9 +10,9 @@ sub install-page(&basepage, &shadow) is export {
             div :align<center>, :style('position: relative; padding: 20px;'), [
                 h1 'rakubrew';
                 tabs :align-nav<center>, [
-                    linux-ish => tab linux-ish();
-                    macOS     => tab macOS();
-                    Windows   => tab Windows();
+                    linux   => tab linux();
+                    macOS   => tab macOS();
+                    Windows => tab Windows();
                 ];
             ];
 
@@ -24,7 +24,7 @@ div [
 
 markdown q:to/END/;
 
-rakubrew is a [Raku](https://raku.org) installation tool. It allows you to have multiple versions of different Raku implementations installed in parallel and switch between them. It's a [perlbrew](https://perlbrew.pl/) and [plenv](https://github.com/tokuhirom/plenv) look alike and supports both flavours of commands.
+rakubrew is a [raku](#) installation tool. It allows you to have multiple versions of different raku implementations installed in parallel and switch between them. It's a [perlbrew](https://perlbrew.pl/) and [plenv](https://github.com/tokuhirom/plenv) look alike and supports both flavours of commands.
 
 other download and installation [options](#footer) are available
 END
@@ -34,10 +34,10 @@ spacer;
 ]
 }
 
-sub linux-ish {
+sub linux {
 div [
 
-h1 'linux-ish';
+h1 'linux';
 md-head;
 
 markdown q:to/END/;
@@ -215,9 +215,9 @@ rakubrew knows three different versions that can be set separately.
 
 The `global` version is the one that is selected when neither the `shell` version nor the `local` version are active.
 
-The `shell` version changes the active Raku version just in the current shell. Closing the current shell also looses the `shell` version.
+The `shell` version changes the active raku version just in the current shell. Closing the current shell also looses the `shell` version.
 
-The `local` version is specific to a folder. When CWD is in that folder or a sub folder that version of Raku is used. Only works in `shim` mode. To unset a local version one must delete the `.RAKU_VERSION` file in the respective folder.
+The `local` version is specific to a folder. When CWD is in that folder or a sub folder that version of raku is used. Only works in `shim` mode. To unset a local version one must delete the `.RAKU_VERSION` file in the respective folder.
 
 
 ## modes
@@ -226,7 +226,7 @@ rakubrew can work in two distinct modes: `env` and `shim`
 
 In `env` mode rakubrew modifies the `$PATH` variable as needed when switching between versions. This is neat because one then runs the executables directly. This is the default mode on *nix.
 
-In `shim` mode rakubrew generates wrapper scripts called shims for all executables it can find in all the different Raku installations. These shims forward to the actual executable when called. This mechanism allows for some advanced features, such as local versions. When installing a module that adds scripts one must make rakubrew aware of these new scripts. This is done with
+In `shim` mode rakubrew generates wrapper scripts called shims for all executables it can find in all the different raku installations. These shims forward to the actual executable when called. This mechanism allows for some advanced features, such as local versions. When installing a module that adds scripts one must make rakubrew aware of these new scripts. This is done with
 
     rakubrew rehash
 
@@ -235,7 +235,7 @@ In `env` mode this is not necessary.
 
 ## registering external versions
 
-To add a Raku installation to rakubrew that was created outside of rakubrew one
+To add a raku installation to rakubrew that was created outside of rakubrew one
 should do:
 
     rakubrew register name-of-version /path/to/raku/install/directory
@@ -248,7 +248,7 @@ should do:
 
 ## uninstall
 
-To remove rakubrew and any Raku implementations it has installed on your
+To remove rakubrew and any raku implementations it has installed on your
 system, delete the  `~/.rakubrew` and `~/.local/share/rakubrew` directories.
 
 # Further Info
