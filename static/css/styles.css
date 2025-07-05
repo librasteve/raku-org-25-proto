@@ -2838,11 +2838,18 @@ body > footer > p {
   --base-color-doc-markup: #d02b4c; /* Matches adjusted danger */
 }
 
+@media only screen and (max-width: 480px) {
+  .raku-code {
+    padding: 10px;
+  }
+}
 .raku-code {
-  z-index: 1; /* or even 0 */
+  z-index: 1;
   text-align: left;
   position: relative;
   min-width: 400px;
+  max-width: 100%;
+  overflow-x: auto;
   /* required to match highlights-js css with raku highlighter css */
 }
 .raku-code button.copy-code {

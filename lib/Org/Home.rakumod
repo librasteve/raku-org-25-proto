@@ -2,8 +2,9 @@ unit class Home;
 
 use Air::Functional :BASE;
 use Air::Base;
+use Air::Plugin::Hilite;
 
-sub note($s) {
+sub code-note($s) {
     p( :style('font-size:small; text-align:right'), em("...$s") )
 }
 sub vignette(*@a, *%h) {
@@ -47,7 +48,7 @@ sub home-page(&basepage, &shadow) is export {
                                     li( 'Functional: '; code '.map'; ' and reduce '; code '[+]'; ' process lists immutably' );
                                     li( 'Procedural: the overall code flow is straightforward' );
                                 ];
-                                note 'natural syntax & semantics';
+                                code-note 'natural syntax & semantics';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -75,7 +76,7 @@ sub home-page(&basepage, &shadow) is export {
                                     li( code '$user'; ' and '; code '$info'; ' are dynamically typed.' );
                                     li( 'They work smoothly together ... gradual typing in action.' );
                                 ];
-                                note 'rapid prototype to solid product';
+                                code-note 'rapid prototype to solid product';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -97,7 +98,7 @@ sub home-page(&basepage, &shadow) is export {
                             article [
                                 h3 'Easy REPL';
                                 p 'Experienced programmers in any other language can pick up raku very quickly, and beginners find the REPL (Read-Evaluate-Print-Loop) a great way to interactively explore.';
-                                note 'makes the easy things easy';
+                                code-note 'makes the easy things easy';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -126,7 +127,7 @@ sub home-page(&basepage, &shadow) is export {
                                     li( 'Named arguments like (', code ':$age'; ' and '; code ':$verbose'; ') are optional.' );
                                     li( 'Boolean flags like ', code '--verbose'; ' are automatically treated as True if present.' );
                                 ];
-                                note 'with automated --help';
+                                code-note 'with automated --help';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -151,7 +152,7 @@ sub home-page(&basepage, &shadow) is export {
                                 p ['raku ships with the '; code 'zef'; ' package manager.'];
                                 p 'Built in semantic version literals and programmatic comparison help you set wildcard (*) and minimum (+) versions.';
                                 p 'Comprehensive support for modules and meta-data allows selective import on version, author and api.';
-                                note 'robust package management';
+                                code-note 'robust package management';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -178,7 +179,7 @@ sub home-page(&basepage, &shadow) is export {
                                 h3 'One Liners';
                                 p 'Use on the command line for more ergonomic scripts.';
                                 p ['A '; code 'sed'; ' substitution, for example.'];
-                                note 'bash, sed, awk alternative';
+                                code-note 'bash, sed, awk alternative';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -200,7 +201,7 @@ sub home-page(&basepage, &shadow) is export {
                             article [
                                 h3 'Grammars';
                                 p  'Definable grammars for pattern matching and generalized string processing.';
-                                note 'domain specific languages';
+                                code-note 'domain specific languages';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -225,7 +226,7 @@ sub home-page(&basepage, &shadow) is export {
                             article [
                                 h3 'Concurrency';
                                 p  'Parallelism, concurrency, and asynchrony including multi-core support.';
-                                note 'exploit latest hardware';
+                                code-note 'exploit latest hardware';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -244,7 +245,7 @@ sub home-page(&basepage, &shadow) is export {
                             article [
                                 h3 'Lazy Evaluation';
                                 p  'Functional programming primitives, lazy and eager list evaluation.';
-                                note 'memory & processor efficient';
+                                code-note 'memory & processor efficient';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -263,7 +264,7 @@ sub home-page(&basepage, &shadow) is export {
                             article [
                                 h3 'Role Composition';
                                 p 'Here\'s a Bird class that inherits from Animal and composes the Flyer role. It shows a child method overriding the parent and usage of both inherited and composed behavior.';
-                                note 'Python simplicity with C++ power';
+                                code-note 'Python simplicity with C++ power';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -286,7 +287,7 @@ sub home-page(&basepage, &shadow) is export {
                             article [
                                 h3 'Mixins';
                                 p 'This shows an instance of the Int (arbitrary precision integer) class with a stringification method mixed in via the but. The say routine stringifies the variable and so returns "forty two".';
-                                note 'everything is an object';
+                                code-note 'everything is an object';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -302,7 +303,7 @@ sub home-page(&basepage, &shadow) is export {
                             article [
                                 h3 'Multi-Dispatch';
                                 p [ 'Multi subs and methods help streamline code such as this Fibonacci generator. [Or, in this case, you could use the '; code '...'; ' Sequence operator.]' ];
-                                note 'cleaner, more extensible code';
+                                code-note 'cleaner, more extensible code';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -322,7 +323,7 @@ sub home-page(&basepage, &shadow) is export {
                                 h3 'Signatures';
                                 p 'The signature syntax simplifies function definitions with clear parameter handling and built-in type checks';
                                 p 'See if you can spot positional (@) and named (%) args, optonal(?) [and mandatory(!)] args, slurpy parameters (*), slips (|), type defined-ness (:D), type coercion (()), return types (-->) and aliases (:f)';
-                                note 'finely tuned interfaces';
+                                code-note 'finely tuned interfaces';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -345,7 +346,7 @@ sub home-page(&basepage, &shadow) is export {
                                 h3 'File IO';
                                 p 'Changes the first occurrence of "Hello" to "Hi" in the file.';
                                 p [code '.IO.lines'; ' and '; code '.IO.words'; ' return a list of the file lines or words.'];
-                                note 'well designed abstractions';
+                                code-note 'well designed abstractions';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -366,7 +367,7 @@ sub home-page(&basepage, &shadow) is export {
                             article [
                                 h3 'Unicode Regular Expressions';
                                 p  'Arguably the most powerful Unicode-aware regex engine available, especially for complex text processing. It shines in tasks where precision and multilingual support are essential e.g. with Grapheme and Diacritic handling.';
-                                note 'unicode centric text handling';
+                                code-note 'unicode centric text handling';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -383,7 +384,7 @@ sub home-page(&basepage, &shadow) is export {
                             article [
                                 h3 'Hyper Operators';
                                 p  'Smart and consistent operator modifiers that apply parallel code execution and vector processing.';
-                                note 'easy parallel processing';
+                                code-note 'easy parallel processing';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -405,7 +406,7 @@ sub home-page(&basepage, &shadow) is export {
                                     li( code 'map'; 'doubles each value.' );
                                     li( code 'grep'; 'filters value greater than 5.' );
                                 ];
-                                note 'function pipelines';
+                                code-note 'function pipelines';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -427,7 +428,7 @@ sub home-page(&basepage, &shadow) is export {
                             article [
                                 h3 'Rational Numerics';
                                 p  'Rational, Fractions, Complex, BigInt & Unicode numbers all come as standard.';
-                                note 'math without surprises';
+                                code-note 'math without surprises';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -446,7 +447,7 @@ sub home-page(&basepage, &shadow) is export {
                                 h3 'Sets & Junctions';
                                 p 'Set, Bag and Mix come with all the set operators: ∪ ∩ ∆ ⊖ ∖ ∈ ∉ ⊆ ⊂ ⊇ ⊃>.';
                                 p 'Junctions (any, all, one, none) simplify multi-value tests for clean declarative logic.';
-                                note 'more concise code';
+                                code-note 'more concise code';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -466,7 +467,7 @@ sub home-page(&basepage, &shadow) is export {
                             article [
                                 h3 'Smartmatching';
                                 p [ 'The '; code 'given { when }'; ' construct uses smartmatching ('; code('~~'); ') to check type, equality, membership, logic, regex and so on.'; ];
-                                note 'powerful matcher capability';
+                                code-note 'powerful matcher capability';
                             ];
                             article [
                                 hilite q:to/END/;
@@ -492,7 +493,7 @@ sub home-page(&basepage, &shadow) is export {
                         article [
                             h3 'Localization & Internationalization';
                             p 'This snippet is written using Japanese identifiers and strings, showcasing localization (l10n) and internationalization (i18n) features.';
-                            note 'think global: act local';
+                            code-note 'think global: act local';
                         ];
                         article [
                             hilite q:to/END/;
@@ -513,7 +514,7 @@ sub home-page(&basepage, &shadow) is export {
                         article [
                             h3 'LLM Functions';
                             p 'A suite of LLM and Data modules. Define functions with metadata to automate LLMs like ChatGPT. Connect user prompts to code, making AI-driven interfaces easier to build.';
-                            note 'connect LLMs to code';
+                            code-note 'connect LLMs to code';
                         ];
                         article [
                             hilite q:to/END/;
@@ -547,7 +548,7 @@ sub home-page(&basepage, &shadow) is export {
                                 li( code '/greet/<name>'; ' with a personalized greeting, e.g. '; em '"Hello, Alice!"');
                             ];
                             p 'Stops gracefully with Ctrl+C (', code 'SIGINT', ')';
-                            note 'pluggable middleware and Cro template language';
+                            code-note 'pluggable middleware and Cro template language';
                         ];
                         article [
                             hilite q:to/END/;
@@ -584,7 +585,7 @@ sub home-page(&basepage, &shadow) is export {
                         article [
                             h3 'Object Relational Mapper (ORM)';
                             p 'Here we use Red to define a Person model with fields id, firstName, and lastName. It sets up a SQLite database, creates a corresponding table, and populates it with data from a json-data() function. The ^populate method takes model data from JSON and inserts it into the database.';
-                            note 'declarative table definitions';
+                            code-note 'declarative table definitions';
                         ];
                         article [
                             hilite q:to/END/;
