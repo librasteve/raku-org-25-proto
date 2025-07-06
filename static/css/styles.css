@@ -2847,7 +2847,6 @@ body > footer > p {
   z-index: 1;
   text-align: left;
   position: relative;
-  min-width: 400px;
   max-width: 100%;
   overflow-x: auto;
   /* required to match highlights-js css with raku highlighter css */

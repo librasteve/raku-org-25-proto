@@ -13,7 +13,7 @@ sub vignette(*@a, *%h) {
 sub install {
     div [
         a :href</nav/1/install>, :target<_self>, button 'Install';
-        p 'linux, macOS, and Windows';
+        p 'Linux, macOS, and Windows';
     ];
 }
 
@@ -21,12 +21,12 @@ sub home-page(&basepage, &shadow) is export {
     basepage #:REFRESH(10),
         main [
             shadow;
-            div :align<center>, :style<min-width:400px;>, [
-                h1 safe 'raku is the powerful, expressive, multi&#8209;paradigm programming&nbsp;language';
+            div :align<center>, [
+                h1 safe 'raku is the powerful, expressive, multi&#8209;paradigm programming language';
                 spacer :height<16em>;
                 install;
                 spacer :height<16em>;
-                div :style<min-width:400px;>, [
+                div [
                     h5 'raku packs a massive collection of programming tools into a single language';
                     h5 'with all this at your fingertips, you can pick the best tool for any task';
                     h5 'OO, functional and procedural styles combine smoothly';
@@ -66,7 +66,7 @@ sub home-page(&basepage, &shadow) is export {
                             ];
                         ];
 
-                    gradually-typed => tab
+                    strict-gradual => tab
                         vignette :direction<rtl>, [
                             article [
                                 h3 'Strict & Gradual Types';
