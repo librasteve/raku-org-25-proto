@@ -22,16 +22,9 @@ sub home-page(&basepage, &shadow) is export {
         main [
             shadow;
             div :align<center>, [
-                h1 safe 'raku is the powerful, expressive, multi&#8209;paradigm programming language';
+                h1 safe 'Raku is an expressive, multi&#8209;paradigm, Open Source language that works the way you think.';
                 spacer :height<16em>;
                 install;
-                spacer :height<16em>;
-                div [
-                    h5 'raku packs a massive collection of programming tools into a single language';
-                    h5 'with all this at your fingertips, you can pick the best tool for any task';
-                    h5 'OO, functional and procedural styles combine smoothly';
-                    h5 'strict and gradual typing is built in';
-                ];
                 spacer :height<16em>;
             ];
 
@@ -44,9 +37,10 @@ sub home-page(&basepage, &shadow) is export {
                                 h3 'Multi-Paradigm';
                                 p 'Smoothly combine coding styles:';
                                 ul [
-                                    li( 'Object-Oriented: '; code 'class Circle'; ' encapsulates data and behavior' );
-                                    li( 'Functional: '; code '.map'; ' and reduce '; code '[+]'; ' process lists immutably' );
-                                    li( 'Procedural: the overall code flow is straightforward' );
+                                    li( 'Object-Oriented:'; code 'class Circle'; 'encapsulates data and behavior.' );
+                                    li( 'Functional: built-ins like'; code '.map'; 'and operators like'; code '».'; 'and'; code '[+]'; '.' );
+                                    li( 'Declarative:'; code '...'; 'infers sequences, such as the powers of two.' );
+                                    li( 'Procedural: the overall code flow is straightforward.' );
                                 ];
                                 code-note 'natural syntax & semantics';
                             ];
@@ -57,9 +51,12 @@ sub home-page(&basepage, &shadow) is export {
                                         method area { π * $.radius² }
                                     }
 
-                                    my @radii = 1..4;
-                                    my @circles = @radii.map: { Circle.new: :radius($_) };
-                                    my $total-area = [+] @circles.map: *.area;
+                                    my @radii = 1,2,4...256;
+
+                                    my @circles = map { Circle.new(:$^radius) }, @radii;
+
+                                    my $total-area = [+] @circles».area;
+
 
                                     say "Total area: $total-area";
                                     END
@@ -72,8 +69,8 @@ sub home-page(&basepage, &shadow) is export {
                                 h3 'Strict & Gradual Types';
                                 p 'Introduce types as needed:';
                                 ul [
-                                    li( code 'Str $name';  ' and '; code 'Int $age'; 'enforce strict types.');
-                                    li( code '$user'; ' and '; code '$info'; ' are dynamically typed.' );
+                                    li( code 'Str $name'; 'and'; code 'Int $age'; 'enforce strict types.');
+                                    li( code '$user'; 'and'; code '$info'; 'are dynamically typed.' );
                                     li( 'They work smoothly together ... gradual typing in action.' );
                                 ];
                                 code-note 'rapid prototype to solid product';

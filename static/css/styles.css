@@ -2838,11 +2838,6 @@ body > footer > p {
   --base-color-doc-markup: #d02b4c; /* Matches adjusted danger */
 }
 
-@media only screen and (max-width: 480px) {
-  .raku-code {
-    padding: 10px;
-  }
-}
 .raku-code {
   z-index: 1;
   text-align: left;
@@ -2857,6 +2852,7 @@ body > footer > p {
   opacity: 0;
   padding: 0 0.25rem 0.25rem 0.25rem;
   margin-left: 0.25rem;
+  margin-bottom: -15px;
   position: relative;
 }
 .raku-code:hover button.copy-code {
@@ -2882,6 +2878,7 @@ body > footer > p {
   display: inline-block;
   overflow: scroll;
   width: 100%;
+  margin-bottom: 0px;
 }
 .raku-code .rakudoc-in-code {
   padding: 1.25rem 1.5rem;

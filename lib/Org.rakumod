@@ -12,8 +12,8 @@ my @tools = [Analytics.new: :provider(Umami), :key<FIXME>,];  # fixme
 
 
 my &basepage = &page.assuming(
-    title       => 'raku®',
-    description => 'The raku® programming language.',
+    title       => 'Raku®',
+    description => 'The Raku® programming language.',
     footer      =>  footer [
                         hr;
                         p safe Q|
@@ -24,7 +24,7 @@ my &basepage = &page.assuming(
                             &nbsp;&amp;&nbsp;
                             Styled by <a href="https://picocss.com" target="_blank">picocss</a>.
                         |;
-                        p safe 'The raku® Programming Language';
+                        p safe 'The Raku® Programming Language';
                     ],
 );
 
@@ -39,7 +39,7 @@ my Nav $nav =
     nav
         logo => (
             span a :href</>, :target<_self>, :style("display: flex; align-items: center; gap: 0.5rem; text-decoration: none;"),
-            [ img :src</img/camelia-logo.png>, :width<60px>; p :style("margin:0"), "raku®" ]
+            [ img :src</img/camelia-logo.png>, :width<60px>; p :style("margin:0"), "Raku®" ]
         ),
         :widgets[lightdark],
         [
