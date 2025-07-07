@@ -8,9 +8,9 @@ sub install-page(&basepage, &shadow) is export {
         main [
             shadow;
             div :align<center>, :style('position: relative; padding: 20px;'), [
-                h1 'rakubrew';
+                h1 'Rakubrew';
                 tabs :align-nav<center>, [
-                    linux   => tab linux();
+                    Linux   => tab linux();
                     macOS   => tab macOS();
                     Windows => tab Windows();
                 ];
@@ -24,7 +24,7 @@ div [
 
 markdown q:to/END/;
 
-rakubrew is a [raku](#) installation tool. It allows you to have multiple versions of different raku implementations installed in parallel and switch between them. It's a [perlbrew](https://perlbrew.pl/) and [plenv](https://github.com/tokuhirom/plenv) look alike and supports both flavours of commands.
+Rakubrew is a [raku](#) installation tool. It allows you to have multiple versions of different raku implementations installed in parallel and switch between them. It's a [perlbrew](https://perlbrew.pl/) and [plenv](https://github.com/tokuhirom/plenv) look alike and supports both flavours of commands.
 
 other download and installation [options](#footer) are available
 END
@@ -37,23 +37,23 @@ spacer;
 sub linux {
 div [
 
-h1 'linux';
+h1 'Linux';
 md-head;
 
 markdown q:to/END/;
-## installation
+## Installation
 
 Just copy and paste the following piece of code into a console.
 
     curl https://rakubrew.org/install-on-perl.sh | sh
 
 
-## bare bones installation
+## Bare Bones Installation
 
 If the above installation script somehow doesn't work for you, you can install
-rakubrew manually.
+Rakubrew manually.
 
-First download the rakubrew executable:
+First download the Rakubrew executable:
 
     https://rakubrew.org/perl/rakubrew
 
@@ -61,7 +61,7 @@ Then give that file executable permissions:
 
     chmod +x rakubrew
 
-Add the rakubrew and shim folders to your `PATH`:
+Add the Rakubrew and shim folders to your `PATH`:
 
     # Bash & ZSH
     export PATH=/path/where/rakubrew/is:$PATH
@@ -89,19 +89,19 @@ h1 'macOS';
 md-head;
 
 markdown q:to/END/;
-## installation
+## Installation
 
 Just copy and paste the following piece of code into a console.
 
     curl https://rakubrew.org/install-on-macos.sh | sh
 
 
-## bare bones installation
+## Bare Bones Installation
 
 If the above installation script somehow doesn't work for you, you can install
-rakubrew manually.
+Rakubrew manually.
 
-First download the rakubrew executable:
+First download the Rakubrew executable:
 
     https://rakubrew.org/macos/rakubrew     # Intel Mac
     https://rakubrew.org/macos_arm/rakubrew # ARM Mac
@@ -112,7 +112,7 @@ Then give that file executable permissions:
 
 Now you first need to open it according to the instructions at https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616 to tell MacOS' security system that you are actually sure you want to open the file.
 
-Add the rakubrew and shim folders to your `PATH`:
+Add the Rakubrew and shim folders to your `PATH`:
 
     # Bash & ZSH
     export PATH=/path/where/rakubrew/is:$PATH
@@ -140,7 +140,7 @@ h1 'Windows';
 md-head;
 
 markdown q:to/END/;
-## installation
+## Installation
 
 On `CMD` you need to download https://rakubrew.org/install-on-cmd.bat and then
 execute that script in a CMD terminal.
@@ -150,9 +150,9 @@ Powershell window (Don't forget the "." at the start of the command!):
 
     . {iwr -useb https://rakubrew.org/install-on-powershell.ps1 } | iex
 
-## bare bones installation
+## Bare Bones Installation
 
-First download the rakubrew executable:
+First download the Rakubrew executable:
 
     https://rakubrew.org/win/rakubrew.exe
 
@@ -181,21 +181,21 @@ sub md-tail {
 
 markdown q:to/END/;
 
-### shell hook
+### Shell Hook
 
 If you want to use `env` mode, the `shell` command or have auto-completion, you need to install the shell hook. To get the instructions on how to do that type
 
     rakubrew init
 
 
-### installation path
+### Installation Path
 
-To make rakubrew use a different directory to store its files set the `RAKUBREW_HOME` environment variable prior to calling it. Put the following into your `.bashrc` or similar:
+To make Rakubrew use a different directory to store its files set the `RAKUBREW_HOME` environment variable prior to calling it. Put the following into your `.bashrc` or similar:
 
-    export RAKUBREW_HOME=~/rakubrew # or some other path
+    export RAKUBREW =~/rakubrew # or some other path
 
 
-## how
+## How
 
     # list available versions
     rakubrew available
@@ -209,9 +209,9 @@ To make rakubrew use a different directory to store its files set the `RAKUBREW_
     raku -e 'say "Now running {$*RAKU.compiler.version}!"'
 
 
-## global, shell, local
+## Global, Shell, Local
 
-rakubrew knows three different versions that can be set separately.
+Rakubrew knows three different versions that can be set separately.
 
 The `global` version is the one that is selected when neither the `shell` version nor the `local` version are active.
 
@@ -220,40 +220,40 @@ The `shell` version changes the active raku version just in the current shell. C
 The `local` version is specific to a folder. When CWD is in that folder or a sub folder that version of raku is used. Only works in `shim` mode. To unset a local version one must delete the `.RAKU_VERSION` file in the respective folder.
 
 
-## modes
+## Modes
 
-rakubrew can work in two distinct modes: `env` and `shim`
+Rakubrew can work in two distinct modes: `env` and `shim`
 
-In `env` mode rakubrew modifies the `$PATH` variable as needed when switching between versions. This is neat because one then runs the executables directly. This is the default mode on *nix.
+In `env` mode Rakubrew modifies the `$PATH` variable as needed when switching between versions. This is neat because one then runs the executables directly. This is the default mode on *nix.
 
-In `shim` mode rakubrew generates wrapper scripts called shims for all executables it can find in all the different raku installations. These shims forward to the actual executable when called. This mechanism allows for some advanced features, such as local versions. When installing a module that adds scripts one must make rakubrew aware of these new scripts. This is done with
+In `shim` mode Rakubrew generates wrapper scripts called shims for all executables it can find in all the different raku installations. These shims forward to the actual executable when called. This mechanism allows for some advanced features, such as local versions. When installing a module that adds scripts one must make Rakubrew aware of these new scripts. This is done with
 
     rakubrew rehash
 
 In `env` mode this is not necessary.
 
 
-## registering external versions
+## Registering External Versions
 
-To add a raku installation to rakubrew that was created outside of rakubrew one
+To add a raku installation to Rakubrew that was created outside of Rakubrew one
 should do:
 
     rakubrew register name-of-version /path/to/raku/install/directory
 
 
-## upgrading
+## Upgrading
 
     rakubrew self-upgrade
 
 
-## uninstall
+## Uninstall
 
-To remove rakubrew and any raku implementations it has installed on your
+To remove Rakubrew and any raku implementations it has installed on your
 system, delete the  `~/.rakubrew` and `~/.local/share/rakubrew` directories.
 
 # Further Info
 
-More information on rakubrew is available [here](https://rakubrew.org/)
+More information on Rakubrew is available [here](https://github.com/Raku/App-Rakubrew)
 
 END
 
