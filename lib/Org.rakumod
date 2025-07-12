@@ -47,7 +47,7 @@ my Nav $nav =
             docs      => (external :href<https://docs.raku.org>),
             ecosystem => (external :href<https://raku.land>),
             guide     => (external :href<https://raku.guide>),
-            weekly    => (external :href<https://rakudoweekly.blog>),
+            weekly    => (external :href<https://rakudoweekly.blog/blog-feed/>),
             chat      => (external :href<https://discord.gg/VzYpdQ6>),
             install   => $install,
         ];
@@ -59,7 +59,7 @@ my Page @pages = [$home, $install];
 sub SITE is export {
     site
         :@tools,
-        :register[Air::Plugin::Hilite.new, Tabs.new, Background.new],
+        :register[Air::Plugin::Hilite.new, Tabs.new, Home::Buttabs.new, Background.new],   #iamerejh
         :theme-color<pink>,
         :bold-color<springgreen>,
         :@pages,

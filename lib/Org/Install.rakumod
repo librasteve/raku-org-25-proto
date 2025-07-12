@@ -26,7 +26,7 @@ markdown q:to/END/;
 
 Rakubrew is a [raku](#) installation tool. It allows you to have multiple versions of different raku implementations installed in parallel and switch between them. It's a [perlbrew](https://perlbrew.pl/) and [plenv](https://github.com/tokuhirom/plenv) look alike and supports both flavours of commands.
 
-other download and installation [options](#footer) are available
+Other download and installation [options](#footer) are available
 END
 
 hr;

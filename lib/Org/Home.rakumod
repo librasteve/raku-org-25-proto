@@ -13,9 +13,45 @@ sub vignette(*@a, *%h) {
 sub install {
     div [
         a :href</nav/1/install>, :target<_self>, button 'Install';
-        p 'Linux, macOS, and Windows';
+        p 'Linux, macOS, Windows';
     ];
 }
+
+class Buttabs does Tabs {
+    #| custom button-tab style
+    method STYLE {  q:to/END/;
+        .tab-menu {
+            display: block;
+            justify-content: left;
+        }
+        .tab-links {
+            display: block;
+        }
+        .tab-links > li > a {
+            border-radius: var(--pico-border-radius);
+            background-color: transparent;
+            text-decoration: none;
+            cursor: pointer;
+            user-select: none;
+        }
+        .tab-links > li.active > a {
+            text-decoration: none;
+            border-bottom: var(--pico-border-width) solid var(--pico-primary-hover);
+        }
+
+        @media (max-width: 768px) {
+            .tab-menu {
+                text-align: center;
+            }
+            .tab-links > * {
+                padding-top: 0;
+                padding-bottom:1em;
+            }
+        }
+        END
+    }
+}
+sub buttabs(*@a, *%h) { Buttabs.new( |@a, |%h ) }
 
 sub home-page(&basepage, &shadow) is export {
     basepage #:REFRESH(10),
@@ -29,7 +65,7 @@ sub home-page(&basepage, &shadow) is export {
             ];
 
             div [
-                tabs [
+                buttabs [
 
                     multi-paradigm => tab
                         vignette :direction<rtl>, [
@@ -90,10 +126,10 @@ sub home-page(&basepage, &shadow) is export {
                             ];
                         ];
 
-                    easy-REPL => tab
+                    interactive-mode => tab
                         vignette :direction<rtl>, [
                             article [
-                                h3 'Easy REPL';
+                                h3 'Interactive Mode';
                                 p 'Experienced programmers in any other language can pick up raku very quickly, and beginners find the REPL (Read-Evaluate-Print-Loop) a great way to interactively explore.';
                                 code-note 'makes the easy things easy';
                             ];
@@ -142,30 +178,25 @@ sub home-page(&basepage, &shadow) is export {
                         ];
 
 
-                    consistent-ecosystem => tab
+                    consistent-ecosystem => tab  #iamerejh
                         vignette :direction<rtl>, [
                             article [
                                 h3 'Consistent Ecosystem';
-                                p ['raku ships with the '; code 'zef'; ' package manager.'];
-                                p 'Built in semantic version literals and programmatic comparison help you set wildcard (*) and minimum (+) versions.';
-                                p 'Comprehensive support for modules and meta-data allows selective import on version, author and api.';
+                                p ['The'; code 'zef'; 'package manager and '; code 'raku.land'; 'directory provide a unified framework for specifying and installing modules.'];
+                                p 'Built in semantic version literals and smart compare for wildcard (*) and minimum (+) versions.';
+                                p 'Locking of compiler and module versions improves the durability of your code.';
                                 code-note 'robust package management';
                             ];
                             article [
+
                                 hilite q:to/END/;
-                                    # Measure.rakumod
-                                    unit module Physics::Measure:ver<2.0.1>:auth<zef:alice)>;
+                                    # Lock the compiler to v6.d for compatibility
+                                    use v6.d;
 
-                                    # META6.json
-                                    "version": "2.0.1",
-                                    "raku": "6.d",
-                                    "auth": "zef:alice",
-                                    "depends": ["Physics::Unit:ver<2+>:api<2>"],
+                                    # Use API 1 from version 2.1 or later (any minor release)
+                                    use Physics::Measure:api<1>:ver<2.1+.*>:auth<zef:alice> :ALL;
 
-                                    # zef install Physics::Measure:api<1>
-
-                                    use 6.d;               # guarantees backward compatible
-                                    use Physics::Measure:api<1>:ver<2.0.2+> :ALL;
+                                    say 42m / 10s;   # 42m/s
                                     END
                                 ];
                         ];
@@ -175,7 +206,7 @@ sub home-page(&basepage, &shadow) is export {
                             article [
                                 h3 'One Liners';
                                 p 'Use on the command line for more ergonomic scripts.';
-                                p ['A '; code 'sed'; ' substitution, for example.'];
+                                p ['An'; code 'awk'; 'alternative, for example.'];
                                 code-note 'bash, sed, awk alternative';
                             ];
                             article [
@@ -192,7 +223,7 @@ sub home-page(&basepage, &shadow) is export {
                         ];
                 ];
 
-                tabs [
+                buttabs [
                     grammars => tab
                         vignette [
                             article [
@@ -205,14 +236,14 @@ sub home-page(&basepage, &shadow) is export {
                                     grammar Parser {
                                         rule  TOP  { I <love> <lang> }
                                         token love { '♥' | love }
-                                        token lang { < Raku Perl Rust Go Python Ruby > }
+                                        token lang { < Raku Rust Go Python Ruby TypeScript PHP > }
                                     }
 
                                     say Parser.parse: 'I ♥ Raku';
                                     # OUTPUT: ｢I ♥ Raku｣ love => ｢♥｣ lang => ｢Raku｣
 
-                                    say Parser.parse: 'I love Perl';
-                                    # OUTPUT: ｢I love Perl｣ love => ｢love｣ lang => ｢Perl｣
+                                    say Parser.parse: 'I love Python';
+                                    # OUTPUT: ｢I love Python｣ love => ｢love｣ lang => ｢Python｣
                                     END
                                 ];
                         ];
@@ -358,12 +389,13 @@ sub home-page(&basepage, &shadow) is export {
 
                 ];
 
-                tabs [
-                    unicode-regexs => tab
+                buttabs [
+                    unicode-regexes => tab
                         vignette :direction<rtl>, [
                             article [
-                                h3 'Unicode Regular Expressions';
-                                p  'Arguably the most powerful Unicode-aware regex engine available, especially for complex text processing. It shines in tasks where precision and multilingual support are essential e.g. with Grapheme and Diacritic handling.';
+                                h3 'Unicode Regexes';
+                                p  'Arguably the most powerful Unicode-aware regular expression engine available, especially for complex text processing.';
+                                p 'It shines in tasks where precision and multilingual support are essential such as Grapheme and Diacritic handling.';
                                 code-note 'unicode centric text handling';
                             ];
                             article [
@@ -371,7 +403,7 @@ sub home-page(&basepage, &shadow) is export {
                                     say "Cool😎" ~~ /<:Letter>* <:Block("Emoticons")>/; # ｢Cool😎｣
                                     say "Cześć" ~~ m:ignoremark/ Czesc /;               # ｢Cześć｣
                                     say "WEIẞE" ~~ m:ignorecase/ weisse /;              # ｢WEIẞE｣
-                                    say "หนูแฮมสเตอร์" ~~ /<:Letter>+/;     # ｢หนูแฮมสเตอร์｣ thehamster
+                                    say "หนูแฮมสเตอร์" ~~ /<:Letter>+/;                   # ｢หนูแฮมสเตอร์｣
                                     END
                             ];
                         ];
@@ -402,20 +434,23 @@ sub home-page(&basepage, &shadow) is export {
                                     li( code '(1..5)'; 'creates a Range.' );
                                     li( code 'map'; 'doubles each value.' );
                                     li( code 'grep'; 'filters value greater than 5.' );
+                                    li( code 'say'; 'outputs the results.' );
                                 ];
                                 code-note 'function pipelines';
                             ];
                             article [
                                 hilite q:to/END/;
-                                    # function pipeline style
+                                    # pipeline functional style
                                     (1..5)
                                         ==> map { $_ * 2 }
-                                        ==> grep { $_ > 5 }   # (6 8 10)
+                                        ==> grep { $_ > 5 }
+                                        ==> say();              # (6 8 10)
 
-                                    # OO method chain style
+                                    # method chain OO style
                                     (1..5)
                                         .map( * * 2)
-                                        .grep( * > 5)         # (6 8 10)
+                                        .grep( * > 5)
+                                        .say                    # (6 8 10)
                                     END
                                 ];
                         ];
@@ -424,16 +459,21 @@ sub home-page(&basepage, &shadow) is export {
                         vignette :direction<rtl>, [
                             article [
                                 h3 'Rational Numerics';
-                                p  'Rational, Fractions, Complex, BigInt & Unicode numbers all come as standard.';
+                                p  'Int, BigInt, Rational (fraction), Complex & Num (floating point) numbers all come as standard.';
+                                p  ['Sidesteps floating-point errors by using exact math by default, ensuring'; code '0.1 + 0.2 == 0.3'; ' just works.'];
                                 code-note 'math without surprises';
                             ];
                             article [
                                 hilite q:to/END/;
+                                    # standard numeric types
+                                    say 2 ** 64;                    # Int
+                                    say 2 ** 64 + 1;                # BigInt
+                                    say (1/13 + 3/7 + 3/8).raku;    # Rat <641/728>
+                                    say 3+4i;                       # Complex
+                                    say 5e0;                        # Num
+
+                                    # no floating point error
                                     say 0.1 + 0.2 == 0.3;           # True
-                                    say (1/13 + 3/7 + 3/8).raku;    # <641/728>
-                                    say e ** (i * π) =~= -1;        # True
-                                    say 2 ** 64 + 1;                # 18446744073709551617
-                                    say +௪௨;                        # 42 (in Tamil)
                                     END
                                 ];
                         ];
@@ -484,12 +524,13 @@ sub home-page(&basepage, &shadow) is export {
                 ];
             ];
 
-            tabs [
+            buttabs [
                 L10N => tab
                     vignette [
                         article [
                             h3 'Localization & Internationalization';
-                            p 'This snippet is written using Japanese identifiers and strings, showcasing localization (l10n) and internationalization (i18n) features.';
+                            p 'This snippet is written using Japanese identifiers and strings, showcasing localization (L10N) and internationalization (I18N) features.';
+                            p 'Localized Raku code can be automatically translated to any other localization.';
                             code-note 'think global: act local';
                         ];
                         article [
@@ -517,12 +558,12 @@ sub home-page(&basepage, &shadow) is export {
                             hilite q:to/END/;
                                 use LLM::Functions;
 
-                                my \recipe = llm-function(
-                                    -> :$dish, :$cuisine { "Give a recipe for $dish in the $cuisine cuisine."},
+                                my &recipe = llm-function(
+                                    -> :$dish, :$cuisine { "Recipe for $dish in $cuisine cuisine."},
                                     llm-evaluator => 'chatGPT'
                                 );
 
-                                say recipe(dish => 'salad', cuisine => 'Russian', max-tokens => 300);
+                                say recipe(dish => 'salad', cuisine => 'Russian');
 
                                 # **Ingredients:**
                                 #
@@ -552,7 +593,7 @@ sub home-page(&basepage, &shadow) is export {
                                 use Cro::HTTP::Router;
                                 use Cro::HTTP::Server;
 
-                                my $app = route {
+                                my $application = route {
                                     get -> {
                                         content 'text/plain', 'Hello, Cro!';
                                     }
@@ -567,7 +608,7 @@ sub home-page(&basepage, &shadow) is export {
                                 my Cro::HTTP::Server $server .= new:
                                     :host<localhost>,
                                     :port(10000),
-                                    :application($app);
+                                    :$application;
                                 $server.start;
                                 react whenever signal(SIGINT) {
                                     $server.stop;
