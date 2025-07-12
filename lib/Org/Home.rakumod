@@ -70,7 +70,7 @@ sub home-page(&basepage, &shadow) is export {
                     multi-paradigm => tab
                         vignette :direction<rtl>, [
                             article [
-                                h3 'Multi-Paradigm';
+                                h3 'Multi Paradigm';
                                 p 'Smoothly combine coding styles:';
                                 ul [
                                     li( 'Object-Oriented:'; code 'class Circle'; 'encapsulates data and behavior.' );
@@ -178,10 +178,10 @@ sub home-page(&basepage, &shadow) is export {
                         ];
 
 
-                    consistent-ecosystem => tab  #iamerejh
+                    solid-ecosystem => tab  #iamerejh
                         vignette :direction<rtl>, [
                             article [
-                                h3 'Consistent Ecosystem';
+                                h3 'Solid Ecosystem';
                                 p ['The'; code 'zef'; 'package manager and '; code 'raku.land'; 'directory provide a unified framework for specifying and installing modules.'];
                                 p 'Built in semantic version literals and smart compare for wildcard (*) and minimum (+) versions.';
                                 p 'Locking of compiler and module versions improves the durability of your code.';
@@ -460,7 +460,7 @@ sub home-page(&basepage, &shadow) is export {
                             article [
                                 h3 'Rational Numerics';
                                 p  'Int, BigInt, Rational (fraction), Complex & Num (floating point) numbers all come as standard.';
-                                p  ['Sidesteps floating-point errors by using exact math by default, ensuring'; code '0.1 + 0.2 == 0.3'; ' just works.'];
+                                p  ['Prevents floating-point errors by using exact math, so'; code '0.1 + 0.2 == 0.3'; 'just works.'];
                                 code-note 'math without surprises';
                             ];
                             article [
