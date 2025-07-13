@@ -373,7 +373,7 @@ sub home-page(&basepage, &shadow) is export {
                             article [
                                 h3 'File IO';
                                 p 'Changes the first occurrence of "Hello" to "Hi" in the file.';
-                                p [code '.IO.lines'; ' and '; code '.IO.words'; ' return a list of the file lines or words.'];
+                                p [code '.IO.lines'; ' and '; code '.IO.words'; 'return a lazy list of the file lines or words. This batch pipelined model makes light work of enormous files'];
                                 code-note 'well designed abstractions';
                             ];
                             article [

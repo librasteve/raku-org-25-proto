@@ -14,7 +14,8 @@
     "provides": {
         "Org": "lib/Org.rakumod",
         "Org::Home": "lib/Org/Home.rakumod",
-        "Org::Install": "lib/Org/Install.rakumod"
+        "Org::Install": "lib/Org/Install.rakumod",
+        "Org::Info": "lib/Org/Info.rakumod"
     },
     "license": "Artistic-2.0",
     "source-url": ""

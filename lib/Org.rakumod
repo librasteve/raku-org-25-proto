@@ -6,6 +6,7 @@ use Air::Plugin::Hilite;
 
 use Org::Home;
 use Org::Install;
+use Org::Info;
 
 
 my @tools = [Analytics.new: :provider(Umami), :key<FIXME>,];  # fixme
@@ -34,6 +35,7 @@ my &shadow = &background.assuming
 
 my Page $home    = home-page    &basepage, &shadow;
 my Page $install = install-page &basepage, &shadow;
+my Page $info    = info-page    &basepage, &shadow;
 
 my Nav $nav =
     nav
@@ -43,7 +45,8 @@ my Nav $nav =
         ),
         :widgets[lightdark],
         [
-            github    => (external :href<https://github.com/Raku>),
+            info      => $info,
+            git       => (external :href<https://github.com/Raku>),
             docs      => (external :href<https://docs.raku.org>),
             ecosystem => (external :href<https://raku.land>),
             guide     => (external :href<https://raku.guide>),
@@ -53,13 +56,14 @@ my Nav $nav =
         ];
 
 
-my Page @pages = [$home, $install];
+my Page @pages = [$home, $install, $info];
 { .nav = $nav } for @pages;
 
 sub SITE is export {
     site
         :@tools,
-        :register[Air::Plugin::Hilite.new, Tabs.new, Home::Buttabs.new, Background.new],   #iamerejh
+        :register[Air::Plugin::Hilite.new, Tabs.new, Home::Buttabs.new, Background.new,
+              Dashboard.new, Box.new],
         :theme-color<pink>,
         :bold-color<springgreen>,
         :@pages,
