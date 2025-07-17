@@ -184,7 +184,7 @@ sub home-page(&basepage, &shadow) is export {
                                 h3 'Solid Ecosystem';
                                 p ['The'; code 'zef'; 'package manager and '; code 'raku.land'; 'directory provide a unified framework for specifying and installing modules.'];
                                 p 'Built in semantic version literals and smart compare for wildcard (*) and minimum (+) versions.';
-                                p 'Locking of compiler and module versions improves the durability of your code.';
+                                p 'Revision-gated compiler selection underpins the durability of your code.';
                                 code-note 'robust package management';
                             ];
                             article [
