@@ -29,6 +29,12 @@ DSL, LLM, functional, OO, CLI, procedural, dynamic, strict, concurrent, jupyter
  - gradual types = from path from fast prototype to solid production code
  - batteries included = fewer dependencies, more consistent code
 
+## pathways
+- jump-in (primary)
+- sponsor (secondary)
+
+_note: the term "jump-in" is intended to cover both the toe-dippers and feet-wet visitors described [here](https://wayland.github.io/blog/raku/ReachingOut/Pathways-of-Entry.xml)_
+
 ## audience
  - coders who like power tools
  - corporate sponsors who court them
