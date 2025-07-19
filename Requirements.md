@@ -3,7 +3,7 @@
  - logo = camelia
  - colors = camelia (good - used sparingly - on lightdark)
  - brand = open & fun [code|community]
- - claim = power tools for coders
+ - claim = works the way you think
 
 ## messages
  - a set of power tools for coders
