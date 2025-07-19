@@ -1,7 +1,5 @@
-# marketing
-
 ## basics
- - name = raku  (.lc)
+ - name = Raku
  - logo = camelia
  - colors = camelia (good - used sparingly - on lightdark)
  - brand = open & fun [code|community]
