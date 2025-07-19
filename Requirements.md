@@ -6,9 +6,11 @@
  - claim = works the way you think
 
 ## messages
- - a set of power tools for coders
- - use the tool & style that matches your problem
- - all designed to work smoothly together
+ - expressive
+ - multi-paradigm
+ - Open Source
+
+_note: each of these is distinct vs. the "competition"_
  
 ### plus
  - extensive & growing ecosystem (with Inline::Perl5 & Inline::Python)
