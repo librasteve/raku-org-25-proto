@@ -20,18 +20,11 @@ sub info-page(&basepage, &shadow) is export {
 
                     #### Visual Studio Code
 
-                     - [Raku language support](https://github.com/bscan/RakuNavigator)
+                     - [Raku Navigator](https://github.com/bscan/RakuNavigator) language support.
 
                     #### Geany
 
                      - [Geany](https://www.geany.org) is a popular flyweight Open Source IDE - now supports Raku.
-
-                    #### Atom
-
-                     - [Raku syntax highlighter](https://atom.io/packages/language-perl6), a plugin that provides Raku highlighting. Follow the instructions in the package readme.
-                     - [Raku script runner](https://atom.io/packages/script)
-                     - See here how to configure both the above plugins, as well as others, to turn [Atom into a Raku IDE](https://github.com/perl6/Atom-as-a-Perl6-IDE). Works with the syntax highlighter listed above. Can run Raku code from the screen buffer, selection, or a file.
-                     - [Raku Editor Tools](https://atom.io/packages/atom-perl6-editor-tools), an Atom plugin that provides a collection of useful Raku editing tools (may not be compatible with the latest Atom).
 
                     #### Vim
 
@@ -40,20 +33,11 @@ sub info-page(&basepage, &shadow) is export {
                     #### Emacs
 
                      - [raku-mode](https://github.com/Raku/raku-mode), an Emacs major mode for Raku which provides syntax highlighting (and more)
-                     - [Unified Raku + Perl + Moose/MooseX::Declare](https://github.com/jrockway/cperl-mode) syntax highlighting
-                     - [Spacemacs](https://github.com/syl20bnr/spacemacs): Emacs wrapper with vim key-bindings and with extra stuff
+                     - [Spacemacs](https://github.com/syl20bnr/spacemacs): Emacs wrapper with vim key-bindings and extra stuff
 
                     #### Nano
 
                      - [Raku syntax highlighting](https://github.com/hankache/raku.nanorc)
-
-                    #### Other
-
-                     - [Podlite](https://podlite.org/) – Open Source desktop Raku Pod editor and viewer for Windows, Linux, and Mac.
-                     - [pod6.in](https://pod6.in/) – online Raku Pod (aka pod6) editor.
-                     - [CudaText](https://cudatext.github.io/): Raku lexer is present in Addon Manager
-                     - [Kate](https://kate-editor.org/): A cross-platform text editor part of the KDE project
-                     - [Notepad++](https://notepad-plus-plus.org/): A free and open-source source code editor for use with Microsoft Windows.
                     END
                 ];
                 box :order(2), [
@@ -97,6 +81,7 @@ sub info-page(&basepage, &shadow) is export {
                      - [Online Raku compiler (most up to date)](https://repl.it/languages/raku)
                      - [Online Raku REPL (glot.io)](https://glot.io/new/raku)
                      - [Online Raku REPL (tio.run)](https://tio.run/#perl6)
+                     - [Online Rakudoc editor](https://pod6.in/)
                      - [Cheatsheet](https://raw.githubusercontent.com/Raku/mu/master/docs/Perl6/Cheatsheet/cheatsheet.txt)
                     END
                     ];
