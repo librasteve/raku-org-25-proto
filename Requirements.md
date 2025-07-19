@@ -24,10 +24,10 @@ grammars, slangs, regex 2.0, unicode, gradual types, function composition, multi
 DSL, LLM, functional, OO, CLI, procedural, dynamic, strict, concurrent, jupyter
 
 ### proof points:
- - multi paradigm = no need to switch out your language and ecosystem depending on task
- - pin down complexity = match the impedance of the solution to the problem
- - optional types = built in strong types applied gradually
- - batteries included = common basis with fewer dependencies
+ - multi paradigm = select a code style best suited to the problem
+ - control complexity = match the impedance of the solution to the problem
+ - gradual types = from path from fast prototype to solid production code
+ - batteries included = fewer dependencies, more consistent code
 
 ## audience
  - coders who like power tools
