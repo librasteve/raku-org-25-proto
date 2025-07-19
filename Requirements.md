@@ -36,12 +36,14 @@ DSL, LLM, functional, OO, CLI, procedural, dynamic, strict, concurrent, jupyter
 _note: the term "jump-in" is intended to cover both the toe-dippers and feet-wet visitors described [here](https://wayland.github.io/blog/raku/ReachingOut/Pathways-of-Entry.xml)_
 
 ## audience
- - coders who like power tools
- - corporate sponsors who court them
+ - open minded coders (typically Linux-centric)
+ - coming from Rust Go Python Ruby TypeScript PHP
+
+_note: "feeling constricted by Python?"_
 
 ## positioning
- - there is a spectrum from SIMPLE to POWERFUL
-   - Python & Go are SIMPLE : raku is POWERFUL
+ - there is a spectrum from SIMPLE to POWERFU
+   - Python & Go are SIMPLE : raku is POWERFUL 
  - raku is heir to the UNIX language dynasty
    - C => [javascript|perl|PHP] => raku
  - with a dash of Haskell for attitude
