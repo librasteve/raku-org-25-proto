@@ -39,26 +39,23 @@ _note: the term "jump-in" is intended to cover both the toe-dippers and feet-wet
  - open minded coders (typically Linux-centric)
  - coming from Rust Go Python Ruby TypeScript PHP
 
-_note: "feeling constricted by Python?"_
-
 ## positioning
  - there is a spectrum from SIMPLE to POWERFU
-   - Python & Go are SIMPLE : raku is POWERFUL 
+   - Python & Go are SIMPLE : raku is POWERFUL (aka expressive)
  - raku is heir to the UNIX language dynasty
    - C => [javascript|perl|PHP] => raku
  - with a dash of Haskell for attitude
  - a scripting language, not a systems language
- - good on ramps … raku.guide, think raku…
 
 ## journey
- - attention = are you a fellow gremlin?
- - interest = power tools for you
+ - attention = feeling constricted by Python?
+ - interest = an expressive language
  - decision = vignettes
- - action = getting stated
+ - action = install
 
 ## feelings
-- embrace your inner gremlin
-- need ....
+- work the way you think
+- more creative expression
 
 ### quotes
  - https://rakujourney.wordpress.com/2024/05/22/perl-love-notes/
