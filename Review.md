@@ -1,4 +1,12 @@
-# Spike02 Prototype Complete
+# Prototype Complete
+
+> Awesome work, Steve. It looks great.
+>
+> Thanks again for taking all my feedback into consideration.
+> I'm so much happier with version 2, and can't wait to see it go live.
+>
+> Congratulations!
+> Damian
 
 Thanks for agreeing to review the first iteration (Spike01) of a prototype upgrade to the raku.org website.
 
