@@ -6,14 +6,15 @@ use Air::Plugin::Hilite;
 
 use Org::Home;
 use Org::Install;
+use Org::Info;
 
 
 my @tools = [Analytics.new: :provider(Umami), :key<FIXME>,];  # fixme
 
 
 my &basepage = &page.assuming(
-    title       => 'raku®',
-    description => 'The raku® programming language.',
+    title       => 'Raku®',
+    description => 'The Raku® programming language.',
     footer      =>  footer [
                         hr;
                         p safe Q|
@@ -32,34 +33,41 @@ my &shadow = &background.assuming
     :url<https://upload.wikimedia.org/wikipedia/commons/f/fd/Butterfly_bottom_PSF_transparent.gif>;
 
 
-my Page $home    = home-page(&basepage, &shadow);
-my Page $install = install-page(&basepage, &shadow);
+my Page $home    = home-page    &basepage, &shadow;
+my Page $install = install-page &basepage, &shadow;
+my Page $info    = info-page    &basepage, &shadow;
 
 my Nav $nav =
     nav
         logo => (
             span a :href</>, :target<_self>, :style("display: flex; align-items: center; gap: 0.5rem; text-decoration: none;"),
-            [ img :src</img/camelia-logo.png>, :width<60px>; p :style("margin:0"), "raku®" ]
+            [
+                img :src</img/camelia-logo.png>, :width<60px>,
+                :title('Hi, my name is Camelia. I\'m the spokesbug for the Raku Programming Language. Raku has been developed by a team of dedicated and enthusiastic open source volunteers, and continues to be developed. You can help too. The only requirement is that you know how to be nice to all kinds of people (and butterflies).');
+                p :style("margin:0"),"Raku®";
+            ]
         ),
         :widgets[lightdark],
         [
-            github    => (external :href<https://github.com/Raku>),
+            info      => $info,
+            git       => (external :href<https://github.com/rakudo/rakudo>),
             docs      => (external :href<https://docs.raku.org>),
             ecosystem => (external :href<https://raku.land>),
             guide     => (external :href<https://raku.guide>),
-            weekly    => (external :href<https://rakudoweekly.blog>),
+            weekly    => (external :href<https://rakudoweekly.blog/blog-feed/>),
             chat      => (external :href<https://discord.gg/VzYpdQ6>),
             install   => $install,
         ];
 
 
-my Page @pages = [$home, $install];
+my Page @pages = [$home, $install, $info];
 { .nav = $nav } for @pages;
 
 sub SITE is export {
     site
         :@tools,
-        :register[Air::Plugin::Hilite.new, Tabs.new, Background.new, Lightbox.new],
+        :register[Air::Plugin::Hilite.new, Tabs.new, Home::Buttabs.new, Background.new,
+              Dashboard.new, Box.new],
         :theme-color<pink>,
         :bold-color<springgreen>,
         :@pages,

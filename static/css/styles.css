@@ -2839,10 +2839,11 @@ body > footer > p {
 }
 
 .raku-code {
-  z-index: 1; /* or even 0 */
+  z-index: 1;
   text-align: left;
   position: relative;
-  min-width: 400px;
+  max-width: 100%;
+  overflow-x: auto;
   /* required to match highlights-js css with raku highlighter css */
 }
 .raku-code button.copy-code {
@@ -2851,6 +2852,7 @@ body > footer > p {
   opacity: 0;
   padding: 0 0.25rem 0.25rem 0.25rem;
   margin-left: 0.25rem;
+  margin-bottom: -15px;
   position: relative;
 }
 .raku-code:hover button.copy-code {
@@ -2874,8 +2876,9 @@ body > footer > p {
 }
 .raku-code pre {
   display: inline-block;
-  overflow: scroll;
+  overflow: auto;
   width: 100%;
+  margin-bottom: 0px;
 }
 .raku-code .rakudoc-in-code {
   padding: 1.25rem 1.5rem;
