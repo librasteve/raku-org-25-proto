@@ -178,10 +178,10 @@ sub home-page(&basepage, &shadow) is export {
                         ];
 
 
-                    solid-ecosystem => tab  #iamerejh
+                    thriving-ecosystem => tab  #iamerejh
                         vignette :direction<rtl>, [
                             article [
-                                h3 'Solid Ecosystem';
+                                h3 'Thriving Ecosystem';
                                 p ['The'; code 'zef'; 'package manager and '; code 'raku.land'; 'directory provide a unified framework for specifying and installing modules.'];
                                 p 'Built in semantic version literals and smart compare for wildcard (*) and minimum (+) versions.';
                                 p 'Revision-gated compiler selection underpins the durability of your code.';
@@ -216,7 +216,7 @@ sub home-page(&basepage, &shadow) is export {
 
                                     raku -pe 's/ (\d+) / {flip($0)} /' file.txt
                                     # flip digit runs
-                                    # 123 to 321  (latin)
+                                    # 123 to 321  (western)
                                     # ٣٢٥ to ٥٢٣  (urdu)
                                     END
                                 ];
@@ -543,6 +543,24 @@ sub home-page(&basepage, &shadow) is export {
                                 } その他 {
                                     言う "数は10以上です";
                                 }
+                                END
+                            ];
+                    ];
+
+                FFI => tab
+                    vignette [
+                        article [
+                            h3 'FFI (Foreign Function Interface)';
+                            p 'Call functions or use data from libraries written in another language — often C or C++.';
+                            code-note 'reuse code and improve performance';
+                        ];
+                        article [
+                            hilite q:to/END/;
+                                use NativeCall;
+
+                                sub abs(int32 --> int32) is native('c') { * }
+
+                                say abs(-42);  # Outputs: 42
                                 END
                             ];
                     ];
