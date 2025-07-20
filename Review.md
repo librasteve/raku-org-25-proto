@@ -1,20 +1,22 @@
-# Review Spike01
+# Spike02 Prototype Complete
 
-Thanks for agreeing to review the first iteration of a prototype upgrade to the raku.org website.
+Thanks for agreeing to review the first iteration (Spike01) of a prototype upgrade to the raku.org website.
 
-Spike01 is live here https://proto25.harcstack.org
+Spike02 is live here https://proto25.harcstack.org and incorporates all the agreed items arising. It is now ready for transfer to the raku organisation and deployment to live. (well I need to write the Dockerfile stuff for coleman).
 
-You can also see the README to install and run locally if you prefer.
+Spike02 is the execution of all the agreed work items arising from the Spike01 review. It represents the completion of 35 issues since the Spike01 review closed on 02-July, including several improvements to the Air::Base library.
 
-Please note that the review period is from 27-Jun to 02-Jul.
+The prototype is now closed for content changes, while we move it to live. After that, it will be reopened for ongoing improvements and enhancements like any other Raku community project.
 
-Hopefully the following will help with osme context and guidance...
+Very much appreciate you support in getting to completion of the prototype.
+
+Hopefully the following will help with some context and guidance...
 
 ## Review Process
 
 Coming off the kitchen docs / website conversation, we agreed to limit the initial review to the summit participants plus Damian. 
 
-Therefore the “plan” is iterate on these prototype spikes until that group reaches consensus prior to making a release plan. 
+Therefore the “plan” has been to iterate on these prototype spikes until that group reaches consensus prior to making a release plan. <= you are here
 
 On release, the source will be published over to the raku.org repository and subsequent change requests will be open to the wider community as with the old site.
 
@@ -62,9 +64,9 @@ Please add any thoughts to deployment Issue(s).
 
 ## Requirements 
 
-Check out the Requirements.md file here to see the intent and focus as already reviewed by the wider raku community.
+Check out the Requirements.md file here to see the intent and focus as already reviewed by the wider raku community. (recently updated)
 
-I am now closing the requirements consultation so that we are not chasing a moving target. 
+The requirements consultation closed on 02-July so that we are not chasing a moving target. 
 
 ## Inspiration 
 
@@ -91,17 +93,9 @@ As agreed in the kitchen, the raku, rakudo, rakudo star navel gazing has been de
 ## Omissions
 
 There are some things I want to do but didn’t want to delay this review:
-- other install options
-- list IDE options
-- cover Community options (Discord and IRC)
-- carousel for sponsor icons
-- footer items
-- link to glot.io sandbox
-- link to suggest change to this site
-- link to rosetta https://rosettacode.org/wiki/Category:Raku
-- link to rakudo latest releases https://rakudo.org/news
-
-Much of this will be brought in directly from the main site 
+- carousel for sponsor icons (plan is to layer in the sponsor track after go live)
+- link to suggest change to this site (since its gonna move)
+- other issues withthe backlog label
 
 If you want a specific install option or IDE to be listed please raise that here by PR or Issue. It is apparent that many install options (eg `apt install rakudo`) should be excluded due to the very old raku versions they supply, so be prepared for a quality assessment. 
 
@@ -118,8 +112,6 @@ I am a strong advocate of simplicity, focus and a frictionless experience to att
 
 And I’m lazy. 
 
-Therefore spike 01 is deliberately minimalist (but already contains a massive amount of code examples) and in general I would like to avoid adding more stuff. So if you want to request something new, please also tell me what should be removed. 
- 
 ## Triage
 
 New requests will be treated according to:
