@@ -8,39 +8,28 @@ sub install-page(&basepage, &shadow) is export {
         main [
             shadow;
             div :align<center>, :style('position: relative; padding: 20px;'), [
-                h1 'Rakubrew';
+                h1 'Install Raku';
                 tabs :align-nav<center>, [
                     Linux   => tab linux();
                     macOS   => tab macOS();
                     Windows => tab Windows();
+                    Docker  => tab Docker();
                 ];
             ];
 
         ];
     }
 
-sub md-head {
-div [
-
-markdown q:to/END/;
-
-Rakubrew is a Raku installation tool. It allows you to have multiple versions of different Raku implementations installed in parallel and switch between them. It's a [perlbrew](https://perlbrew.pl/) and [plenv](https://github.com/tokuhirom/plenv) look alike and supports both flavours of commands.
-
-Other download and installation [options](/nav/1/info) are available
-END
-
-hr;
-spacer;
-]
-}
-
 sub linux {
 div [
 
 h1 'Linux';
-md-head;
 
 markdown q:to/END/;
+Other download and installation [options](/nav/1/info) are available.
+
+Rakubrew is a Raku installation tool. It allows you to have multiple versions of different Raku implementations installed in parallel and switch between them. It's a [perlbrew](https://perlbrew.pl/) and [plenv](https://github.com/tokuhirom/plenv) look alike and supports both flavours of commands.
+
 ## Installation
 
 Just copy and paste the following piece of code into a console.
@@ -86,10 +75,23 @@ sub macOS {
 div [
 
 h1 'macOS';
-md-head;
 
 markdown q:to/END/;
-## Installation
+Other download and installation [options](/nav/1/info) are available.
+
+## Installation (Homebrew)
+
+[Homebrew](https://brew.sh/) is a popular macOS package manager.
+
+Just copy and paste the following lines into a console.
+
+    brew update
+    brew install rakudo-star
+
+
+## Installation (Rakubrew)
+
+Rakubrew is a Raku installation tool. It allows you to have multiple versions of different Raku implementations installed in parallel and switch between them. It's a [perlbrew](https://perlbrew.pl/) and [plenv](https://github.com/tokuhirom/plenv) look alike and supports both flavours of commands.
 
 Just copy and paste the following piece of code into a console.
 
@@ -137,9 +139,12 @@ sub Windows {
 div [
 
 h1 'Windows';
-md-head;
 
 markdown q:to/END/;
+Other download and installation [options](/nav/1/info) are available.
+
+Rakubrew is a Raku installation tool. It allows you to have multiple versions of different Raku implementations installed in parallel and switch between them. It's a [perlbrew](https://perlbrew.pl/) and [plenv](https://github.com/tokuhirom/plenv) look alike and supports both flavours of commands.
+
 ## Installation
 
 On `CMD` you need to download https://rakubrew.org/install-on-cmd.bat and then
@@ -257,5 +262,26 @@ More information on Rakubrew is available [here](https://github.com/Raku/App-Rak
 
 END
 
+}
+
+sub Docker {
+    div [
+        h1 'Docker';
+
+        markdown q:to/END/;
+Other download and installation [options](/nav/1/info) are available.
+
+Rakudo Star is a Raku distribution complete with the zef package manager tool.
+
+## Installation
+
+    docker run -it rakudo-star
+
+# Further Info
+
+More information on the Rakudo Star Docker images is availble on [Docker hub](https://hub.docker.com/_/rakudo-star/)
+
+END
+    ]
 }
 

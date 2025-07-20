@@ -14,9 +14,9 @@ sub info-page(&basepage, &shadow) is export {
                 box :order(1), [
                     header [h3 'IDEs'; p 'IDEs and editor plugins for working with Raku.'];
                     main markdown q:to/END/;
-                    #### IntelliJ
+                    #### JetBrains IntelliJ
 
-                     - [RIP](https://github.com/ab5tract/raku-intellij-plugin): Raku IntelliJ Plugin. For use with IntelliJ [IDEs](https://www.jetbrains.com/idea/download) (scroll down for the Community Edition).
+                     - [Raku IntelliJ Plugin](https://github.com/ab5tract/raku-intellij-plugin) for use with IntelliJ [IDEs](https://www.jetbrains.com/idea/download) (scroll down for the Community Edition).
 
                     #### Visual Studio Code
 
@@ -61,7 +61,7 @@ sub info-page(&basepage, &shadow) is export {
 
                     #### Download Options
 
-                    [Rakubrew](https://rakubrew.org) is a Raku installation tool. It allows you to have multiple versions of different Raku implementations installed in parallel and switch between them.
+                    Visit the [install](/nav/1/install) page for the most convenient installation option for Linux, macOS, Windows and Docker.
 
                     Other download and installation options are available at [Rakudo Downloads](https://rakudo.org/downloads).
 
@@ -73,7 +73,7 @@ sub info-page(&basepage, &shadow) is export {
 
                     Many questions and answers are marked with the [Raku tag](https://stackoverflow.com/questions/tagged/raku).
                     END
-                    ];
+                ];
                 box :order(3), [
                     header h3 'Sandboxes';
                     main markdown q:to/END/;
@@ -84,10 +84,10 @@ sub info-page(&basepage, &shadow) is export {
                      - [Online Rakudoc editor](https://pod6.in/)
                      - [Cheatsheet](https://raw.githubusercontent.com/Raku/mu/master/docs/Perl6/Cheatsheet/cheatsheet.txt)
                     END
-                    ];
+                ];
                 box :order(4), [
                     header h3 'Guides';
-                    main markdown( q:to/END/;
+                    main markdown q:to/END/;
                      - [The Raku Guide](https://raku.guide/)
                      - [Raku Essentials](https://course.raku.org/essentials/)
                      - [Learn Raku in Y minutes](https://learnxinyminutes.com/docs/raku/)
@@ -95,7 +95,6 @@ sub info-page(&basepage, &shadow) is export {
                      - [Raku tutorials](https://github.com/perlpilot/perl6-docs)
                      - [Perl and Raku Weekly Challenge](https://perlweeklychallenge.org/)
                     END
-                    )
                 ];
                 box :order(5), [
                     header h3 'Social & Blogs';
@@ -114,7 +113,7 @@ sub info-page(&basepage, &shadow) is export {
                      - [Rakudo Weekly News](https://rakudoweekly.blog/) – Weekly changes in and around Rakudo
                      - [Raku Advent Calendar](https://rakuadventcalendar.wordpress.com/) - [help for contributors](https://github.com/Raku/advent/blob/master/CONTRIBUTING.md)
                     END
-                    ];
+                ];
                 box :order(6), [
                     header h3 'Books';
                     main markdown q:to/END/;
@@ -127,7 +126,7 @@ sub info-page(&basepage, &shadow) is export {
                      - [Metagenomics](https://kyclark.gitbooks.io/metagenomics/content/), by Ken Youens-Clark *(published, ebook)*
                      - [Learning to program with Perl 6: First Steps](https://www.amazon.com/gp/product/B07221XCVL), by JJ Merelo *(published, ebook)*
                     END
-                    ];
+                ];
                 box :order(7), [
                     header h3 'Artistic License';
                     main markdown q:to/END/;
@@ -137,7 +136,7 @@ sub info-page(&basepage, &shadow) is export {
 
                     The broader development community is of course not required to use this license, but there is a [large uptake](https://raku.land/stats) among the community.
                     END
-                    ];
+                ];
                 box :order(8), [
                     header h3 'Raku Steering Council (RSC)';
                     main markdown q:to/END/;
@@ -145,7 +144,7 @@ sub info-page(&basepage, &shadow) is export {
 
                     The [Problem Solving](https://github.com/Raku/problem-solving) repository contains issues that impact Raku which require consensus to resolve. The RSC is responsible for guiding any deadlocked issues to completion.
                     END
-                    ];
+                ];
             ];
         ];
 }
