@@ -4,9 +4,9 @@ Thanks for agreeing to review the first iteration (Spike01) of a prototype upgra
 
 Spike02 is live here https://proto25.harcstack.org and incorporates all the agreed items arising. It is now ready for transfer to the raku organisation and deployment to live. (well I need to write the Dockerfile stuff for coleman).
 
-You can also see the README to install and run locally if you prefer.
-
 Spike02 is the execution of all the agreed work items arising from the Spike01 review. It represents the completion of 35 issues since the Spike01 review closed on 02-July, including several improvements to the Air::Base library.
+
+The prototype is now closed for content changes, while we move it to live. After that, it will be reopened for ongoing improvements and enhancements like any other Raku community project.
 
 Very much appreciate you support in getting to completion of the prototype.
 
