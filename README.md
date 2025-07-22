@@ -55,11 +55,18 @@ cd raku-org-25-proto
 zef install . --force-install
 ```
 
+Set ENV vars for host and port
+
+```
+export CRO_WEBSITE_HOST="0.0.0.0"
+export CRO_WEBSITE_PORT="4000"  
+```
+
 Run and view it
 
 ```
 raku -Ilib service.raku
-Open a browser and go to http://localhost:3000
+Open a browser and go to http://0.0.0.0:4000
 ```
 
 ~librasteve
