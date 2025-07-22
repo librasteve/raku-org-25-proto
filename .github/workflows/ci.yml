@@ -9,7 +9,7 @@ jobs:
   build_and_push:
     runs-on: ubuntu-latest
     env:
-      QUAY_USERNAME: chroot.club+cro_robot_rw
+      QUAY_USERNAME: chroot.club+proto25
       QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
     steps:
       - name: Checkout code
