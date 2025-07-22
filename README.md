@@ -1,3 +1,5 @@
+[![Build and Test](https://github.com/librasteve/raku-org-25-proto/actions/workflows/ci.yml/badge.svg)](https://github.com/librasteve/raku-org-25-proto/actions/workflows/ci.yml)
+
 # raku-org-25-proto
 a prototype upgrade to the raku.org website
 
