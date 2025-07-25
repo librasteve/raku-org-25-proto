@@ -1,4 +1,6 @@
-[![Build and Test](https://github.com/librasteve/raku-org-25-proto/actions/workflows/ci.yml/badge.svg)](https://github.com/librasteve/raku-org-25-proto/actions/workflows/ci.yml)
+### PLEASE NOTE THAT THE CODE FRO THIS SITE HAS NOW BEEN MOVED TO https://github.com/Raku/raku.org/tree/proto-25 ###
+
+_There is a handful of issues here that I will migrate over there shortly._
 
 # raku-org-25-proto
 a prototype upgrade to the raku.org website
