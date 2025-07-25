@@ -40,11 +40,7 @@ Install Cro & Air (branch hilite)
 
 ```
 zef install --/test cro
-git clone https://github.com/librasteve/Air.git 
-cd Air
-git checkout hilite
-zef install . --force-install
-cd ..
+zef install Air
 ```
 
 Red is not used in this build.
