@@ -6,7 +6,10 @@ use Air::Plugin::Hilite;
 
 use Org::Home;
 use Org::Install;
-use Org::Info;
+use Org::Tooling;
+use Org::Learning;
+use Org::Help;
+use Org::Community;
 
 
 my @tools = [Analytics.new: :provider(Umami), :key<FIXME>,];  # fixme
@@ -33,9 +36,12 @@ my &shadow = &background.assuming
     :url<https://upload.wikimedia.org/wikipedia/commons/f/fd/Butterfly_bottom_PSF_transparent.gif>;
 
 
-my Page $home    = home-page    &basepage, &shadow;
-my Page $install = install-page &basepage, &shadow;
-my Page $info    = info-page    &basepage, &shadow;
+my Page $home         = home-page         &basepage, &shadow;
+my Page $install      = install-page      &basepage, &shadow;
+my Page $learning     = learning-page     &basepage, &shadow;
+my Page $tooling      = tooling-page      &basepage, &shadow;
+my Page $help         = help-page         &basepage, &shadow;
+my Page $get-involved = get-involved-page &basepage, &shadow;
 
 my Nav $nav =
     nav
@@ -49,18 +55,17 @@ my Nav $nav =
         ),
         :widgets[lightdark],
         [
-            info      => $info,
-            git       => (external :href<https://github.com/rakudo/rakudo>),
-            docs      => (external :href<https://docs.raku.org>),
-            ecosystem => (external :href<https://raku.land>),
-            guide     => (external :href<https://raku.guide>),
-            weekly    => (external :href<https://rakudoweekly.blog/blog-feed/>),
-            chat      => (external :href<https://discord.gg/VzYpdQ6>),
             install   => $install,
+            philosophy => (external :href<https://wayland.github.io/blog/raku/Philosophy/Proverbs.xml>),
+            tooling  => $tooling,
+            learning  => $learning,
+            "I need help!" => $help,
+            modules   => (external :href<https://raku.land>),
+            "get involved" => $get-involved,
         ];
 
 
-my Page @pages = [$home, $install, $info];
+my Page @pages = [$home, $install, $tooling, $learning, $help, $get-involved];
 { .nav = $nav } for @pages;
 
 sub SITE is export {
