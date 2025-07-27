@@ -47,12 +47,11 @@ zef install Air
 
 Red is not used in this build.
 
-Clone and install this repo
+Clone this repo
 
 ```
 git clone https://github.com/librasteve/raku-org-25-proto.git
 cd raku-org-25-proto
-zef install . --force-install
 ```
 
 Set ENV vars for host and port
