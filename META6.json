@@ -13,9 +13,12 @@
     "build-depends": [],
     "provides": {
         "Org": "lib/Org.rakumod",
+        "Org::GetInvolved": "lib/Org/GetInvolved.rakumod",
+        "Org::Help": "lib/Org/Help.rakumod",
         "Org::Home": "lib/Org/Home.rakumod",
         "Org::Install": "lib/Org/Install.rakumod",
-        "Org::Info": "lib/Org/Info.rakumod"
+        "Org::Learning": "lib/Org/Learning.rakumod",
+        "Org::Tooling": "lib/Org/Tooling.rakumod"
     },
     "license": "Artistic-2.0",
     "source-url": ""

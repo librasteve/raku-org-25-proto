@@ -9,7 +9,7 @@ use Org::Install;
 use Org::Tooling;
 use Org::Learning;
 use Org::Help;
-use Org::Community;
+use Org::GetInvolved;
 
 
 my @tools = [Analytics.new: :provider(Umami), :key<FIXME>,];  # fixme
@@ -19,17 +19,17 @@ my &basepage = &page.assuming(
     title       => 'Raku®',
     description => 'The Raku® programming language.',
     footer      =>  footer [
-                        hr;
-                        p safe Q|
-                            Hypered with <a href="https://htmx.org" target="_blank">htmx</a>.
-                            Aloft on <a href="https://harcstack.org" target="_blank"><b>&Aring;ir</b></a>.
-                            Constructed in <a href="https://cro.raku.org" target="_blank">cro</a>.
-                            Written in <a href="https://raku.org" target="_blank">raku</a>.
-                            &nbsp;&amp;&nbsp;
-                            Styled by <a href="https://picocss.com" target="_blank">picocss</a>.
-                        |;
-                        p safe 'The Raku® Programming Language';
-                    ],
+        hr;
+        p safe Q|
+            Hypered with <a href="https://htmx.org" target="_blank">htmx</a>.
+            Aloft on <a href="https://harcstack.org" target="_blank"><b>&Aring;ir</b></a>.
+            Constructed in <a href="https://cro.raku.org" target="_blank">cro</a>.
+            Written in <a href="https://raku.org" target="_blank">raku</a>.
+            &nbsp;&amp;&nbsp;
+            Styled by <a href="https://picocss.com" target="_blank">picocss</a>.
+        |;
+        p safe 'The Raku® Programming Language';
+    ],
 );
 
 my &shadow = &background.assuming

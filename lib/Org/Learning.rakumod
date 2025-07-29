@@ -12,9 +12,8 @@ sub learning-page(&basepage, &shadow) is export {
             ];
             dashboard [
                 box :order(2), [
-
-                    #### Code Examples
-
+                    header h3 'Code Examples';
+                    main markdown q:to/END/;
                     Raku is well represented on [Rosetta Code](/community/rosettacode), where you can see the Raku Programming Language (and many other languages) applied to numerous programming tasks.
                     END
                 ];

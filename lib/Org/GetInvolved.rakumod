@@ -3,7 +3,7 @@ unit class GetInvolved;
 use Air::Functional :BASE;
 use Air::Base;
 
-sub get-involved--page(&basepage, &shadow) is export {
+sub get-involved-page(&basepage, &shadow) is export {
     basepage #:REFRESH(10),
         main [
             shadow;
