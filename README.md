@@ -34,7 +34,7 @@ see ./Review.md for what to do
 
 ---
 
-# Installation
+# Local Installation
 
 Install raku - eg. from rakubrew, then:
 
@@ -66,6 +66,27 @@ Run and view it
 ```
 raku -Ilib service.raku
 Open a browser and go to http://0.0.0.0:4000
+```
+
+# Server Installation
+
+Make a directory structure like this:
+
+```
+my_webapp/
+├── docker-compose.yml
+└── Caddyfile
+```
+
+Populate the files from the examples given.
+
+Point your domain name to this IP address (ie. match the Caddyfile).
+
+Then go:
+
+```
+sudo docker-compose up -d
+sudo docker-compose down
 ```
 
 ~librasteve
