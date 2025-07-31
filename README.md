@@ -38,7 +38,7 @@ see ./Review.md for what to do
 
 Install raku - eg. from rakubrew, then:
 
-Install Cro & Air (branch hilite)
+Install Cro & Air
 
 ```
 zef install --/test cro
