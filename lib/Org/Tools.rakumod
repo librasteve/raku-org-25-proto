@@ -12,8 +12,10 @@ sub tools-page(&basepage, &shadow) is export {
             ];
             dashboard [
                 box :order(1), [
-                    header [h3 'IDEs'; p 'IDEs and editor plugins for working with Raku.'];
+                    header h3 'IDEs';
                     main markdown q:to/END/;
+                    IDEs and editor plugins for working with Raku.
+
                     #### JetBrains IntelliJ
 
                      - [Raku IntelliJ Plugin](https://github.com/ab5tract/raku-intellij-plugin) for use with IntelliJ [IDEs](https://www.jetbrains.com/idea/download) (scroll down for the Community Edition).
