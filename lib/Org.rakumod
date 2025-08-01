@@ -10,9 +10,7 @@ use Org::Install;
 use Org::Learn;
 use Org::Tools;
 
-
 my @tools = [Analytics.new: :provider(Umami), :key<FIXME>,];  # fixme
-
 
 my &basepage = &page.assuming(
     title       => 'Raku®',

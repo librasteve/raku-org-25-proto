@@ -31,7 +31,7 @@ sub learn-page(&basepage, &shadow) is export {
 
                     #### Code Examples
 
-                    Raku is well represented on [Rosetta Code](/community/rosettacode), where you can see the Raku Programming Language (and many other languages) applied to numerous programming tasks.
+                    Raku is well represented on [Rosetta Code](https://rosettacode.org/wiki/Category:Raku), where you can see the Raku Programming Language (and many other languages) applied to numerous programming tasks.
                     END
                 ];
                 box :order(2), [
